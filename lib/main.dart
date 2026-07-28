@@ -48,7 +48,7 @@ class _HypAuthAppState extends ConsumerState<HypAuthApp> {
   }
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  Widget build(BuildContext context) {
     final themeMode = ref.watch(themeModeProvider);
 
     return MaterialApp.router(
