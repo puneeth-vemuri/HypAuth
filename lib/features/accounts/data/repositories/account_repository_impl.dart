@@ -1,7 +1,7 @@
 import 'dart:math';
-import '../../../core/errors/failures.dart';
-import '../../../core/services/database_service.dart';
-import '../../../core/services/secure_storage_service.dart';
+import '../../../../core/errors/failures.dart';
+import '../../../../core/services/database_service.dart';
+import '../../../../core/services/secure_storage_service.dart';
 import '../../domain/models/account.dart';
 import '../../domain/models/otp_uri_data.dart';
 import '../../domain/repositories/account_repository.dart';
