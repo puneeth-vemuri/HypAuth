@@ -47,7 +47,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  const Text(
+                  Text(
                     'Settings',
                     style: TextStyle(
                       fontSize: 21,
@@ -58,7 +58,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
                   ),
                   GestureDetector(
                     onTap: () => context.pop(),
-                    child: const Text(
+                    child: Text(
                       'Close',
                       style: TextStyle(
                         fontSize: 13,
@@ -72,7 +72,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
               const SizedBox(height: 22),
 
               // SECURITY Section
-              const Text(
+              Text(
                 'SECURITY',
                 style: TextStyle(
                   fontSize: 10,
@@ -122,7 +122,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
               const SizedBox(height: 20),
 
               // ACCOUNTS Section
-              const Text(
+              Text(
                 'ACCOUNTS',
                 style: TextStyle(
                   fontSize: 10,
@@ -142,7 +142,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
               const Spacer(),
 
               // Footer
-              const Text(
+              Text(
                 'HypAuth ${AppConstants.appVersion}\nNo network permission requested.',
                 style: TextStyle(
                   fontSize: 11,
@@ -178,7 +178,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
             children: [
               Text(
                 title,
-                style: const TextStyle(
+                style: TextStyle(
                   fontSize: 13,
                   fontWeight: FontWeight.w400,
                   color: context.colors.ink,
@@ -187,7 +187,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
               const SizedBox(height: 1),
               Text(
                 subtitle,
-                style: const TextStyle(
+                style: TextStyle(
                   fontSize: 11,
                   color: context.colors.ink3,
                 ),
@@ -225,7 +225,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
           children: [
             Text(
               title,
-              style: const TextStyle(
+              style: TextStyle(
                 fontSize: 13,
                 fontWeight: FontWeight.w400,
                 color: context.colors.ink,
@@ -233,7 +233,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
             ),
             Text(
               value,
-              style: const TextStyle(
+              style: TextStyle(
                 fontSize: 11,
                 color: context.colors.ink3,
               ),

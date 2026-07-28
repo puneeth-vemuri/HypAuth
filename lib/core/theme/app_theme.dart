@@ -144,7 +144,7 @@ class AppTheme {
             borderRadius: BorderRadius.circular(24),
           ),
           padding: const EdgeInsets.symmetric(vertical: 14, horizontal: 20),
-          textStyle: const TextStyle(
+          textStyle: TextStyle(
             fontSize: 13,
             fontWeight: FontWeight.w500,
           ),
@@ -153,12 +153,12 @@ class AppTheme {
       outlinedButtonTheme: OutlinedButtonThemeData(
         style: OutlinedButton.styleFrom(
           foregroundColor: AppColors.ink2,
-          side: const BorderSide(color: AppColors.rule2, width: 1),
+          side: BorderSide(color: AppColors.rule2, width: 1),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(24),
           ),
           padding: const EdgeInsets.symmetric(vertical: 14, horizontal: 20),
-          textStyle: const TextStyle(
+          textStyle: TextStyle(
             fontSize: 13,
             fontWeight: FontWeight.w500,
           ),
@@ -186,7 +186,7 @@ class AppTheme {
     return ThemeData(
       useMaterial3: true,
       brightness: Brightness.dark,
-      scaffoldBackgroundColor: const Color(0xFF141414),
+      scaffoldBackgroundColor: Color(0xFF141414),
       colorScheme: const ColorScheme.dark(
         primary: Color(0xFFFCFBF8),
         secondary: Color(0xFF7B72E9),
@@ -213,14 +213,14 @@ class AppTheme {
       ),
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
-          backgroundColor: const Color(0xFFFCFBF8),
-          foregroundColor: const Color(0xFF141414),
+          backgroundColor: Color(0xFFFCFBF8),
+          foregroundColor: Color(0xFF141414),
           elevation: 0,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(24),
           ),
           padding: const EdgeInsets.symmetric(vertical: 14, horizontal: 20),
-          textStyle: const TextStyle(
+          textStyle: TextStyle(
             fontSize: 13,
             fontWeight: FontWeight.w500,
           ),
@@ -228,13 +228,13 @@ class AppTheme {
       ),
       outlinedButtonTheme: OutlinedButtonThemeData(
         style: OutlinedButton.styleFrom(
-          foregroundColor: const Color(0xFFB5B3AD),
-          side: const BorderSide(color: Color(0xFF3F3D38), width: 1),
+          foregroundColor: Color(0xFFB5B3AD),
+          side: BorderSide(color: Color(0xFF3F3D38), width: 1),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(24),
           ),
           padding: const EdgeInsets.symmetric(vertical: 14, horizontal: 20),
-          textStyle: const TextStyle(
+          textStyle: TextStyle(
             fontSize: 13,
             fontWeight: FontWeight.w500,
           ),

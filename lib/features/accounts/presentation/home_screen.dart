@@ -33,7 +33,7 @@ class HomeScreen extends ConsumerWidget {
                     children: [
                       Text(
                         '${accounts.length} ACCOUNTS',
-                        style: const TextStyle(
+                        style: TextStyle(
                           fontSize: 10,
                           letterSpacing: 1.2,
                           fontWeight: FontWeight.w500,
@@ -41,7 +41,7 @@ class HomeScreen extends ConsumerWidget {
                         ),
                       ),
                       const SizedBox(height: 3),
-                      const Text(
+                      Text(
                         'Codes',
                         style: TextStyle(
                           fontSize: 21,
@@ -56,7 +56,7 @@ class HomeScreen extends ConsumerWidget {
                     children: [
                       GestureDetector(
                         onTap: () => context.push('/search'),
-                        child: const Text(
+                        child: Text(
                           'SEARCH',
                           style: TextStyle(
                             fontSize: 11,
@@ -69,7 +69,7 @@ class HomeScreen extends ConsumerWidget {
                       const SizedBox(width: 16),
                       GestureDetector(
                         onTap: () => context.push('/settings'),
-                        child: const Text(
+                        child: Text(
                           'SETTINGS',
                           style: TextStyle(
                             fontSize: 11,
@@ -144,7 +144,7 @@ class HomeScreen extends ConsumerWidget {
                       borderRadius: BorderRadius.circular(24),
                     ),
                   ),
-                  child: const Text('Add account'),
+                  child: Text('Add account'),
                 ),
               ),
             ],

@@ -169,7 +169,7 @@ class _AccountCardState extends ConsumerState<AccountCard> {
                         ),
                         if (widget.account.isFavorite) ...[
                           const SizedBox(width: 6),
-                          const Icon(
+                          Icon(
                             Icons.star_rounded,
                             size: 16,
                             color: Colors.amber,
@@ -214,7 +214,7 @@ class _AccountCardState extends ConsumerState<AccountCard> {
                   ),
                   const SizedBox(height: 8),
                   IconButton(
-                    icon: const Icon(Icons.copy_rounded, size: 20),
+                    icon: Icon(Icons.copy_rounded, size: 20),
                     onPressed: _copyToClipboard,
                     tooltip: 'Copy OTP',
                   ),

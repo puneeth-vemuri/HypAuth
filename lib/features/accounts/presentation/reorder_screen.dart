@@ -50,7 +50,7 @@ class _ReorderScreenState extends ConsumerState<ReorderScreen> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  const Text(
+                  Text(
                     'Reorder',
                     style: TextStyle(
                       fontSize: 21,
@@ -61,7 +61,7 @@ class _ReorderScreenState extends ConsumerState<ReorderScreen> {
                   ),
                   GestureDetector(
                     onTap: () => context.pop(),
-                    child: const Text(
+                    child: Text(
                       'Done',
                       style: TextStyle(
                         fontSize: 13,
@@ -105,7 +105,7 @@ class _ReorderScreenState extends ConsumerState<ReorderScreen> {
                       child: Row(
                         children: [
                           // Handle Icon
-                          const Icon(
+                          Icon(
                             Icons.drag_handle,
                             size: 20,
                             color: Color(0xFFC9C7BE),
@@ -117,7 +117,7 @@ class _ReorderScreenState extends ConsumerState<ReorderScreen> {
                               children: [
                                 Text(
                                   account.issuer,
-                                  style: const TextStyle(
+                                  style: TextStyle(
                                     fontSize: 13,
                                     fontWeight: FontWeight.w500,
                                     color: context.colors.ink,
@@ -126,7 +126,7 @@ class _ReorderScreenState extends ConsumerState<ReorderScreen> {
                                 const SizedBox(height: 1),
                                 Text(
                                   account.accountName,
-                                  style: const TextStyle(
+                                  style: TextStyle(
                                     fontSize: 11,
                                     color: context.colors.ink3,
                                   ),

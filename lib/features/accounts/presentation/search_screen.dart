@@ -61,7 +61,7 @@ class _SearchScreenState extends ConsumerState<SearchScreen> {
                       child: TextField(
                         controller: _controller,
                         autofocus: true,
-                        style: const TextStyle(
+                        style: TextStyle(
                           fontSize: 15,
                           color: context.colors.ink,
                         ),
@@ -84,7 +84,7 @@ class _SearchScreenState extends ConsumerState<SearchScreen> {
                           context.pop();
                         }
                       },
-                      child: const Text(
+                      child: Text(
                         'Clear',
                         style: TextStyle(
                           fontSize: 11,
@@ -100,7 +100,7 @@ class _SearchScreenState extends ConsumerState<SearchScreen> {
               // Micro Label
               Text(
                 '${filteredAccounts.length} OF ${allAccounts.length}'.toUpperCase(),
-                style: const TextStyle(
+                style: TextStyle(
                   fontSize: 10,
                   letterSpacing: 1.2,
                   fontWeight: FontWeight.w500,
@@ -117,7 +117,7 @@ class _SearchScreenState extends ConsumerState<SearchScreen> {
                           query.isNotEmpty
                               ? 'No accounts match "$query"'
                               : 'Type to search accounts',
-                          style: const TextStyle(
+                          style: TextStyle(
                             fontSize: 12,
                             color: context.colors.ink3,
                           ),

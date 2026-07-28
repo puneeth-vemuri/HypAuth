@@ -24,7 +24,7 @@ class ImportSuccessScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const Spacer(),
-              const Text(
+              Text(
                 'ADDED',
                 style: TextStyle(
                   fontSize: 10,
@@ -36,7 +36,7 @@ class ImportSuccessScreen extends StatelessWidget {
               const SizedBox(height: 10),
               Text(
                 account.issuer,
-                style: const TextStyle(
+                style: TextStyle(
                   fontSize: 24,
                   fontWeight: FontWeight.w500,
                   color: context.colors.ink,
@@ -46,7 +46,7 @@ class ImportSuccessScreen extends StatelessWidget {
               const SizedBox(height: 4),
               Text(
                 account.accountName,
-                style: const TextStyle(
+                style: TextStyle(
                   fontSize: 12,
                   color: context.colors.ink3,
                 ),
@@ -79,7 +79,7 @@ class ImportSuccessScreen extends StatelessWidget {
                       borderRadius: BorderRadius.circular(24),
                     ),
                   ),
-                  child: const Text('Done'),
+                  child: Text('Done'),
                 ),
               ),
               const SizedBox(height: 5),
@@ -87,7 +87,7 @@ class ImportSuccessScreen extends StatelessWidget {
                 width: double.infinity,
                 child: TextButton(
                   onPressed: onScanAnother,
-                  child: const Text(
+                  child: Text(
                     'Scan another',
                     style: TextStyle(
                       fontSize: 13,
@@ -119,7 +119,7 @@ class ImportSuccessScreen extends StatelessWidget {
         children: [
           Text(
             key,
-            style: const TextStyle(
+            style: TextStyle(
               fontSize: 12,
               color: context.colors.ink3,
               fontWeight: FontWeight.w400,
@@ -127,7 +127,7 @@ class ImportSuccessScreen extends StatelessWidget {
           ),
           Text(
             val,
-            style: const TextStyle(
+            style: TextStyle(
               fontFamily: 'monospace',
               fontSize: 12,
               color: context.colors.ink,

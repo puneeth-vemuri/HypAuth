@@ -109,7 +109,7 @@ class _AccountDetailsScreenState extends ConsumerState<AccountDetailsScreen> {
                 children: [
                   GestureDetector(
                     onTap: () => Navigator.pop(context),
-                    child: const Text(
+                    child: Text(
                       'BACK',
                       style: TextStyle(
                         fontSize: 11,
@@ -144,7 +144,7 @@ class _AccountDetailsScreenState extends ConsumerState<AccountDetailsScreen> {
               // Issuer & Email
               Text(
                 widget.account.issuer.toUpperCase(),
-                style: const TextStyle(
+                style: TextStyle(
                   fontSize: 10,
                   letterSpacing: 1.2,
                   fontWeight: FontWeight.w500,
@@ -154,7 +154,7 @@ class _AccountDetailsScreenState extends ConsumerState<AccountDetailsScreen> {
               const SizedBox(height: 4),
               Text(
                 widget.account.accountName,
-                style: const TextStyle(
+                style: TextStyle(
                   fontSize: 12,
                   color: context.colors.ink3,
                 ),
@@ -235,13 +235,13 @@ class _AccountDetailsScreenState extends ConsumerState<AccountDetailsScreen> {
                   onPressed: _confirmDelete,
                   style: OutlinedButton.styleFrom(
                     foregroundColor: context.colors.danger,
-                    side: const BorderSide(color: context.colors.dangerRule, width: 1),
+                    side: BorderSide(color: context.colors.dangerRule, width: 1),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(24),
                     ),
                     padding: const EdgeInsets.symmetric(vertical: 14),
                   ),
-                  child: const Text('Remove account'),
+                  child: Text('Remove account'),
                 ),
               ),
             ],
@@ -266,7 +266,7 @@ class _AccountDetailsScreenState extends ConsumerState<AccountDetailsScreen> {
         children: [
           Text(
             key,
-            style: const TextStyle(
+            style: TextStyle(
               fontSize: 12,
               color: context.colors.ink3,
               fontWeight: FontWeight.w400,
@@ -274,7 +274,7 @@ class _AccountDetailsScreenState extends ConsumerState<AccountDetailsScreen> {
           ),
           Text(
             val,
-            style: const TextStyle(
+            style: TextStyle(
               fontFamily: 'monospace',
               fontSize: 12,
               color: context.colors.ink,

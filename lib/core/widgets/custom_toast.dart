@@ -19,7 +19,7 @@ class CustomToast {
             Expanded(
               child: Text(
                 message,
-                style: const TextStyle(
+                style: TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.w600,
                   fontSize: 14,
@@ -28,7 +28,7 @@ class CustomToast {
             ),
           ],
         ),
-        backgroundColor: const Color(0xFF1E293B),
+        backgroundColor: Color(0xFF1E293B),
         behavior: SnackBarBehavior.floating,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(12),
@@ -97,8 +97,8 @@ class EmptyState extends StatelessWidget {
             const SizedBox(height: 32),
             ElevatedButton.icon(
               onPressed: onAddPressed,
-              icon: const Icon(Icons.qr_code_scanner),
-              label: const Text('Scan QR Code'),
+              icon: Icon(Icons.qr_code_scanner),
+              label: Text('Scan QR Code'),
               style: ElevatedButton.styleFrom(
                 padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 14),
                 shape: RoundedRectangleBorder(

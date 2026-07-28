@@ -93,12 +93,12 @@ class _BiometricUnlockScreenState extends ConsumerState<BiometricUnlockScreen>
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const Spacer(),
-              const HypAuthLogoMark(size: 36, color: context.colors.ink),
+              HypAuthLogoMark(size: 36, color: context.colors.ink),
               const SizedBox(height: 24),
               if (_failed) ...[
                 Text(
                   '$_biometricName NOT RECOGNISED'.toUpperCase(),
-                  style: const TextStyle(
+                  style: TextStyle(
                     fontSize: 10,
                     letterSpacing: 1.2,
                     fontWeight: FontWeight.w500,
@@ -109,7 +109,7 @@ class _BiometricUnlockScreenState extends ConsumerState<BiometricUnlockScreen>
               ],
               Text(
                 'Try again, or\nuse your passcode',
-                style: const TextStyle(
+                style: TextStyle(
                   fontSize: 26,
                   fontWeight: FontWeight.w500,
                   letterSpacing: -0.26,
@@ -118,7 +118,7 @@ class _BiometricUnlockScreenState extends ConsumerState<BiometricUnlockScreen>
                 ),
               ),
               const SizedBox(height: 12),
-              const Text(
+              Text(
                 'Your codes never leave this device, so there is no way to recover them remotely.',
                 style: TextStyle(
                   fontSize: 12,
@@ -147,7 +147,7 @@ class _BiometricUnlockScreenState extends ConsumerState<BiometricUnlockScreen>
                 width: double.infinity,
                 child: TextButton(
                   onPressed: _triggerAuthentication,
-                  child: const Text(
+                  child: Text(
                     'Enter passcode',
                     style: TextStyle(
                       fontSize: 13,

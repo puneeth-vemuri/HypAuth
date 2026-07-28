@@ -5,21 +5,22 @@ import '../../core/theme/app_theme.dart';
 
 class HypAuthLogoMark extends StatelessWidget {
   final double size;
-  final Color color;
+  final Color? color;
 
-  const HypAuthLogoMark({
+  HypAuthLogoMark({
     super.key,
     this.size = 32.0,
-    this.color = context.colors.ink,
+    this.color,
   });
 
   @override
   Widget build(BuildContext context) {
+    final resolvedColor = color ?? context.colors.ink;
     return SizedBox(
       width: size,
       height: size,
       child: CustomPaint(
-        painter: _HypAuthLogoPainter(color: color),
+        painter: _HypAuthLogoPainter(color: resolvedColor),
       ),
     );
   }

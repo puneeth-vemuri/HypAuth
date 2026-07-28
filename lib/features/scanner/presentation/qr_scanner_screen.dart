@@ -68,7 +68,7 @@ class _QrScannerScreenState extends ConsumerState<QrScannerScreen> {
       context: context,
       builder: (dialogCtx) => AlertDialog(
         backgroundColor: context.colors.paper,
-        title: const Text('Enter Key Manually', style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500)),
+        title: Text('Enter Key Manually', style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500)),
         content: SingleChildScrollView(
           child: Column(
             mainAxisSize: MainAxisSize.min,
@@ -93,7 +93,7 @@ class _QrScannerScreenState extends ConsumerState<QrScannerScreen> {
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(dialogCtx),
-            child: const Text('Cancel', style: TextStyle(color: context.colors.ink2)),
+            child: Text('Cancel', style: TextStyle(color: context.colors.ink2)),
           ),
           ElevatedButton(
             onPressed: () async {
@@ -126,7 +126,7 @@ class _QrScannerScreenState extends ConsumerState<QrScannerScreen> {
                 CustomToast.show(dialogCtx, 'Invalid secret key format', isError: true);
               }
             },
-            child: const Text('Save'),
+            child: Text('Save'),
           ),
         ],
       ),
@@ -167,7 +167,7 @@ class _QrScannerScreenState extends ConsumerState<QrScannerScreen> {
                     children: [
                       GestureDetector(
                         onTap: () => context.pop(),
-                        child: const Text(
+                        child: Text(
                           'CLOSE',
                           style: TextStyle(
                             fontSize: 11,
@@ -176,7 +176,7 @@ class _QrScannerScreenState extends ConsumerState<QrScannerScreen> {
                           ),
                         ),
                       ),
-                      const Text(
+                      Text(
                         'SCAN',
                         style: TextStyle(
                           fontSize: 11,
@@ -186,7 +186,7 @@ class _QrScannerScreenState extends ConsumerState<QrScannerScreen> {
                       ),
                       GestureDetector(
                         onTap: () => _scannerController.toggleTorch(),
-                        child: const Text(
+                        child: Text(
                           'TORCH',
                           style: TextStyle(
                             fontSize: 11,
@@ -281,7 +281,7 @@ class _QrScannerScreenState extends ConsumerState<QrScannerScreen> {
                   // Bottom Manual Entry & Hint
                   Column(
                     children: [
-                      const Text(
+                      Text(
                         'Hold steady over the QR code.\nHypAuth imports it the moment it reads.',
                         textAlign: TextAlign.center,
                         style: TextStyle(
@@ -296,14 +296,14 @@ class _QrScannerScreenState extends ConsumerState<QrScannerScreen> {
                         child: OutlinedButton(
                           onPressed: _showManualEntryDialog,
                           style: OutlinedButton.styleFrom(
-                            foregroundColor: const Color(0xFFC9C7BE),
-                            side: const BorderSide(color: Color(0xFF3A3835), width: 1),
+                            foregroundColor: Color(0xFFC9C7BE),
+                            side: BorderSide(color: Color(0xFF3A3835), width: 1),
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(24),
                             ),
                             padding: const EdgeInsets.symmetric(vertical: 14),
                           ),
-                          child: const Text('Enter key manually'),
+                          child: Text('Enter key manually'),
                         ),
                       ),
                     ],

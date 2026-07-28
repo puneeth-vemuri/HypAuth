@@ -131,7 +131,7 @@ class _AccountRowState extends ConsumerState<AccountRow> {
               children: [
                 Text(
                   message,
-                  style: const TextStyle(
+                  style: TextStyle(
                     color: context.colors.paper,
                     fontSize: 12,
                     fontWeight: FontWeight.w400,
@@ -139,7 +139,7 @@ class _AccountRowState extends ConsumerState<AccountRow> {
                 ),
                 Text(
                   hint,
-                  style: const TextStyle(
+                  style: TextStyle(
                     color: Color(0xFF9C9A91),
                     fontFamily: 'monospace',
                     fontSize: 11,
@@ -192,7 +192,7 @@ class _AccountRowState extends ConsumerState<AccountRow> {
             _buildHighlightedText(
               widget.account.issuer,
               widget.searchQuery,
-              const TextStyle(
+              TextStyle(
                 fontSize: 13,
                 fontWeight: FontWeight.w500,
                 color: context.colors.ink,
@@ -204,7 +204,7 @@ class _AccountRowState extends ConsumerState<AccountRow> {
             _buildHighlightedText(
               widget.account.accountName,
               widget.searchQuery,
-              const TextStyle(
+              TextStyle(
                 fontSize: 11,
                 color: context.colors.ink3,
               ),

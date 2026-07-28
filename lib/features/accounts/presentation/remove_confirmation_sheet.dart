@@ -40,7 +40,7 @@ class RemoveConfirmationSheet extends StatelessWidget {
         children: [
           Text(
             'Remove $issuer?',
-            style: const TextStyle(
+            style: TextStyle(
               fontSize: 19,
               fontWeight: FontWeight.w500,
               color: context.colors.ink,
@@ -48,7 +48,7 @@ class RemoveConfirmationSheet extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 9),
-          const Text(
+          Text(
             'The secret is erased from this device immediately. You will be locked out of this account unless you still have its recovery codes.',
             style: TextStyle(
               fontSize: 12,
@@ -72,7 +72,7 @@ class RemoveConfirmationSheet extends StatelessWidget {
                   borderRadius: BorderRadius.circular(24),
                 ),
               ),
-              child: const Text('Remove'),
+              child: Text('Remove'),
             ),
           ),
           const SizedBox(height: 5),
@@ -80,7 +80,7 @@ class RemoveConfirmationSheet extends StatelessWidget {
             width: double.infinity,
             child: TextButton(
               onPressed: () => Navigator.pop(context),
-              child: const Text(
+              child: Text(
                 'Keep it',
                 style: TextStyle(
                   fontSize: 13,
