@@ -3,14 +3,17 @@ import 'package:isar/isar.dart';
 import 'package:path_provider/path_provider.dart';
 import '../../features/accounts/data/models/isar_account.dart';
 import '../../features/accounts/domain/models/account.dart';
+import 'dart:convert';
+import 'preferences_service.dart';
 
 /// Database service managing account metadata persistence via Isar.
 class DatabaseService {
   Isar? _isar;
+  final PreferencesService _prefs;
   final List<Account> _inMemoryAccounts = [];
   final _controller = StreamController<List<Account>>.broadcast();
 
-  DatabaseService({Isar? isar}) : _isar = isar {
+  DatabaseService(this._prefs, {Isar? isar}) : _isar = isar {
     _notify();
   }
 
@@ -29,8 +32,27 @@ class DatabaseService {
       _inMemoryAccounts.addAll(isarAccounts.map((e) => e.toDomain()));
       _notify();
     } catch (_) {
-      // In-memory fallback for unit tests or unsupported platforms
+      // Disk-backed fallback if Isar fails
+      _loadFromFallback();
     }
+  }
+
+  void _loadFromFallback() {
+    try {
+      final jsonStr = _prefs.getFallbackData('database_fallback_accounts');
+      if (jsonStr != null) {
+        final List<dynamic> decoded = jsonDecode(jsonStr);
+        final accounts = decoded.map((e) => Account.fromJson(e as Map<String, dynamic>)).toList();
+        _inMemoryAccounts.clear();
+        _inMemoryAccounts.addAll(accounts);
+        _notify();
+      }
+    } catch (_) {}
+  }
+
+  Future<void> _saveToFallback() async {
+    final list = _inMemoryAccounts.map((e) => e.toJson()).toList();
+    await _prefs.saveFallbackData('database_fallback_accounts', jsonEncode(list));
   }
 
   Stream<List<Account>> watchAccounts() {
@@ -77,6 +99,7 @@ class DatabaseService {
     } else {
       _inMemoryAccounts.add(account);
     }
+    await _saveToFallback();
     _notify();
   }
 
@@ -97,6 +120,7 @@ class DatabaseService {
 
     _inMemoryAccounts.clear();
     _inMemoryAccounts.addAll(accounts);
+    await _saveToFallback();
     _notify();
   }
 
@@ -109,6 +133,7 @@ class DatabaseService {
     }
 
     _inMemoryAccounts.removeWhere((a) => a.id == id);
+    await _saveToFallback();
     _notify();
   }
 

@@ -1,11 +1,12 @@
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import '../constants/app_constants.dart';
+import 'preferences_service.dart';
 
 class SecureStorageService {
   final FlutterSecureStorage _storage;
-  final Map<String, String> _inMemoryFallback = {}; // Fallback for unit testing/desktop mock
+  final PreferencesService _prefs;
 
-  SecureStorageService({FlutterSecureStorage? storage})
+  SecureStorageService(this._prefs, {FlutterSecureStorage? storage})
       : _storage = storage ??
             const FlutterSecureStorage(
               aOptions: AndroidOptions(encryptedSharedPreferences: true),
@@ -18,7 +19,7 @@ class SecureStorageService {
     try {
       await _storage.write(key: _formatKey(accountId), value: secret);
     } catch (_) {
-      _inMemoryFallback[_formatKey(accountId)] = secret;
+      await _prefs.saveFallbackData(_formatKey(accountId), secret);
     }
   }
 
@@ -26,9 +27,9 @@ class SecureStorageService {
     try {
       final val = await _storage.read(key: _formatKey(accountId));
       if (val != null) return val;
-      return _inMemoryFallback[_formatKey(accountId)];
+      return _prefs.getFallbackData(_formatKey(accountId));
     } catch (_) {
-      return _inMemoryFallback[_formatKey(accountId)];
+      return _prefs.getFallbackData(_formatKey(accountId));
     }
   }
 
@@ -36,13 +37,13 @@ class SecureStorageService {
     try {
       await _storage.delete(key: _formatKey(accountId));
     } catch (_) {}
-    _inMemoryFallback.remove(_formatKey(accountId));
+    await _prefs.removeFallbackData(_formatKey(accountId));
   }
 
   Future<void> clearAllSecrets() async {
     try {
       await _storage.deleteAll();
     } catch (_) {}
-    _inMemoryFallback.clear();
+    await _prefs.clearAllFallbackData(AppConstants.secureStorageSecretPrefix);
   }
 }

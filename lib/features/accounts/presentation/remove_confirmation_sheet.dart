@@ -30,7 +30,7 @@ class RemoveConfirmationSheet extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: const BoxDecoration(
-        color: AppColors.paper,
+        color: context.colors.paper,
         borderRadius: BorderRadius.vertical(top: Radius.circular(18)),
       ),
       padding: const EdgeInsets.all(22),
@@ -43,7 +43,7 @@ class RemoveConfirmationSheet extends StatelessWidget {
             style: const TextStyle(
               fontSize: 19,
               fontWeight: FontWeight.w500,
-              color: AppColors.ink,
+              color: context.colors.ink,
               letterSpacing: -0.15,
             ),
           ),
@@ -52,7 +52,7 @@ class RemoveConfirmationSheet extends StatelessWidget {
             'The secret is erased from this device immediately. You will be locked out of this account unless you still have its recovery codes.',
             style: TextStyle(
               fontSize: 12,
-              color: AppColors.ink3,
+              color: context.colors.ink3,
               height: 1.6,
             ),
           ),
@@ -65,8 +65,8 @@ class RemoveConfirmationSheet extends StatelessWidget {
                 onConfirmRemove();
               },
               style: ElevatedButton.styleFrom(
-                backgroundColor: AppColors.danger,
-                foregroundColor: AppColors.paper,
+                backgroundColor: context.colors.danger,
+                foregroundColor: context.colors.paper,
                 padding: const EdgeInsets.symmetric(vertical: 14),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(24),
@@ -84,7 +84,7 @@ class RemoveConfirmationSheet extends StatelessWidget {
                 'Keep it',
                 style: TextStyle(
                   fontSize: 13,
-                  color: AppColors.ink2,
+                  color: context.colors.ink2,
                   fontWeight: FontWeight.w400,
                 ),
               ),

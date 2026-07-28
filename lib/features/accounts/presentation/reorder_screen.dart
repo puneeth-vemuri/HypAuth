@@ -40,7 +40,7 @@ class _ReorderScreenState extends ConsumerState<ReorderScreen> {
     });
 
     return Scaffold(
-      backgroundColor: AppColors.paper,
+      backgroundColor: context.colors.paper,
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 21.0, vertical: 14.0),
@@ -55,7 +55,7 @@ class _ReorderScreenState extends ConsumerState<ReorderScreen> {
                     style: TextStyle(
                       fontSize: 21,
                       fontWeight: FontWeight.w500,
-                      color: AppColors.ink,
+                      color: context.colors.ink,
                       letterSpacing: -0.15,
                     ),
                   ),
@@ -66,7 +66,7 @@ class _ReorderScreenState extends ConsumerState<ReorderScreen> {
                       style: TextStyle(
                         fontSize: 13,
                         fontWeight: FontWeight.w500,
-                        color: AppColors.accent,
+                        color: context.colors.accent,
                       ),
                     ),
                   ),
@@ -99,7 +99,7 @@ class _ReorderScreenState extends ConsumerState<ReorderScreen> {
                           vertical: 14, horizontal: 10),
                       decoration: const BoxDecoration(
                         border: Border(
-                          bottom: BorderSide(color: AppColors.rule, width: 1),
+                          bottom: BorderSide(color: context.colors.rule, width: 1),
                         ),
                       ),
                       child: Row(
@@ -120,7 +120,7 @@ class _ReorderScreenState extends ConsumerState<ReorderScreen> {
                                   style: const TextStyle(
                                     fontSize: 13,
                                     fontWeight: FontWeight.w500,
-                                    color: AppColors.ink,
+                                    color: context.colors.ink,
                                   ),
                                 ),
                                 const SizedBox(height: 1),
@@ -128,7 +128,7 @@ class _ReorderScreenState extends ConsumerState<ReorderScreen> {
                                   account.accountName,
                                   style: const TextStyle(
                                     fontSize: 11,
-                                    color: AppColors.ink3,
+                                    color: context.colors.ink3,
                                   ),
                                 ),
                               ],
@@ -148,7 +148,7 @@ class _ReorderScreenState extends ConsumerState<ReorderScreen> {
                   'Codes are hidden while reordering. Order saves on drop.',
                   style: TextStyle(
                     fontSize: 11,
-                    color: AppColors.ink4,
+                    color: context.colors.ink4,
                     height: 1.55,
                   ),
                 ),

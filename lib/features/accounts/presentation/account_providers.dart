@@ -5,15 +5,18 @@ import '../../../core/services/totp_service.dart';
 import '../domain/models/account.dart';
 import '../domain/models/otp_uri_data.dart';
 import '../domain/repositories/account_repository.dart';
+import '../../settings/presentation/settings_providers.dart'; // Provides preferencesServiceProvider
 import '../data/repositories/account_repository_impl.dart';
 
 // Storage & Repository providers
 final secureStorageProvider = Provider<SecureStorageService>((ref) {
-  return SecureStorageService();
+  final prefs = ref.read(preferencesServiceProvider);
+  return SecureStorageService(prefs);
 });
 
 final databaseServiceProvider = Provider<DatabaseService>((ref) {
-  final db = DatabaseService();
+  final prefs = ref.read(preferencesServiceProvider);
+  final db = DatabaseService(prefs);
   ref.onDispose(() => db.dispose());
   return db;
 });

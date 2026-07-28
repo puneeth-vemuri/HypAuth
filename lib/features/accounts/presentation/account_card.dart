@@ -10,6 +10,7 @@ import 'account_providers.dart';
 
 import '../../../core/services/clipboard_service.dart';
 import '../../settings/presentation/settings_providers.dart';
+import '../../../core/theme/app_theme.dart';
 
 final clipboardServiceProvider = Provider<ClipboardService>((ref) {
   final service = ClipboardService();

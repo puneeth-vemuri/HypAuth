@@ -36,7 +36,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
     final clearSeconds = ref.watch(clipboardClearSecondsProvider);
 
     return Scaffold(
-      backgroundColor: AppColors.paper,
+      backgroundColor: context.colors.paper,
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 21.0, vertical: 14.0),
@@ -52,7 +52,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
                     style: TextStyle(
                       fontSize: 21,
                       fontWeight: FontWeight.w500,
-                      color: AppColors.ink,
+                      color: context.colors.ink,
                       letterSpacing: -0.15,
                     ),
                   ),
@@ -63,7 +63,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
                       style: TextStyle(
                         fontSize: 13,
                         fontWeight: FontWeight.w500,
-                        color: AppColors.ink2,
+                        color: context.colors.ink2,
                       ),
                     ),
                   ),
@@ -78,7 +78,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
                   fontSize: 10,
                   letterSpacing: 1.2,
                   fontWeight: FontWeight.w500,
-                  color: AppColors.ink4,
+                  color: context.colors.ink4,
                 ),
               ),
               const SizedBox(height: 4),
@@ -89,7 +89,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
                 subtitle: 'Required on open',
                 value: biometricLock,
                 onChanged: (val) {
-                  ref.read(isBiometricLockEnabledProvider.notifier).state = val;
+                  ref.read(isBiometricLockEnabledProvider.notifier).setEnabled(val);
                 },
               ),
               _buildOptionRow(
@@ -99,9 +99,19 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
                   final nextVal = clearSeconds == 15
                       ? 30
                       : (clearSeconds == 30 ? 60 : 15);
-                  ref.read(clipboardClearSecondsProvider.notifier).state = nextVal;
+                  ref.read(clipboardClearSecondsProvider.notifier).setSeconds(nextVal);
                 },
               ),
+              _buildOptionRow(
+                title: 'Theme Mode',
+                value: ref.watch(themeModeProvider).name,
+                onTap: () {
+                  final current = ref.read(themeModeProvider);
+                  final next = current == ThemeMode.light ? ThemeMode.dark : ThemeMode.light;
+                  ref.read(themeModeProvider.notifier).setThemeMode(next);
+                },
+              ),
+
               _buildSwitchRow(
                 title: 'Block screenshots',
                 subtitle: 'Android only',
@@ -118,7 +128,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
                   fontSize: 10,
                   letterSpacing: 1.2,
                   fontWeight: FontWeight.w500,
-                  color: AppColors.ink4,
+                  color: context.colors.ink4,
                 ),
               ),
               const SizedBox(height: 4),
@@ -136,7 +146,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
                 'HypAuth ${AppConstants.appVersion}\nNo network permission requested.',
                 style: TextStyle(
                   fontSize: 11,
-                  color: AppColors.ink4,
+                  color: context.colors.ink4,
                   height: 1.55,
                 ),
               ),
@@ -157,7 +167,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
       padding: const EdgeInsets.symmetric(vertical: 14),
       decoration: const BoxDecoration(
         border: Border(
-          bottom: BorderSide(color: AppColors.rule, width: 1),
+          bottom: BorderSide(color: context.colors.rule, width: 1),
         ),
       ),
       child: Row(
@@ -171,7 +181,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
                 style: const TextStyle(
                   fontSize: 13,
                   fontWeight: FontWeight.w400,
-                  color: AppColors.ink,
+                  color: context.colors.ink,
                 ),
               ),
               const SizedBox(height: 1),
@@ -179,16 +189,16 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
                 subtitle,
                 style: const TextStyle(
                   fontSize: 11,
-                  color: AppColors.ink3,
+                  color: context.colors.ink3,
                 ),
               ),
             ],
           ),
           Switch(
             value: value,
-            activeColor: AppColors.paper,
-            activeTrackColor: AppColors.accent,
-            inactiveTrackColor: AppColors.rule2,
+            activeColor: context.colors.paper,
+            activeTrackColor: context.colors.accent,
+            inactiveTrackColor: context.colors.rule2,
             onChanged: onChanged,
           ),
         ],
@@ -207,7 +217,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
         padding: const EdgeInsets.symmetric(vertical: 14),
         decoration: const BoxDecoration(
           border: Border(
-            bottom: BorderSide(color: AppColors.rule, width: 1),
+            bottom: BorderSide(color: context.colors.rule, width: 1),
           ),
         ),
         child: Row(
@@ -218,14 +228,14 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
               style: const TextStyle(
                 fontSize: 13,
                 fontWeight: FontWeight.w400,
-                color: AppColors.ink,
+                color: context.colors.ink,
               ),
             ),
             Text(
               value,
               style: const TextStyle(
                 fontSize: 11,
-                color: AppColors.ink3,
+                color: context.colors.ink3,
               ),
             ),
           ],

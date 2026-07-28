@@ -123,7 +123,7 @@ class _AccountRowState extends ConsumerState<AccountRow> {
           child: Container(
             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
             decoration: BoxDecoration(
-              color: AppColors.ink,
+              color: context.colors.ink,
               borderRadius: BorderRadius.circular(12),
             ),
             child: Row(
@@ -132,7 +132,7 @@ class _AccountRowState extends ConsumerState<AccountRow> {
                 Text(
                   message,
                   style: const TextStyle(
-                    color: AppColors.paper,
+                    color: context.colors.paper,
                     fontSize: 12,
                     fontWeight: FontWeight.w400,
                   ),
@@ -170,10 +170,10 @@ class _AccountRowState extends ConsumerState<AccountRow> {
     final progressRatio = _remainingSeconds / widget.account.period;
 
     final codeColor = _copiedFlash
-        ? AppColors.accent
-        : (isWarning ? AppColors.danger : AppColors.ink);
+        ? context.colors.accent
+        : (isWarning ? context.colors.danger : context.colors.ink);
 
-    final trackColor = isWarning ? AppColors.danger : AppColors.accent;
+    final trackColor = isWarning ? context.colors.danger : context.colors.accent;
 
     return InkWell(
       onTap: _copyToClipboard,
@@ -182,7 +182,7 @@ class _AccountRowState extends ConsumerState<AccountRow> {
         padding: const EdgeInsets.symmetric(vertical: 15),
         decoration: const BoxDecoration(
           border: Border(
-            bottom: BorderSide(color: AppColors.rule, width: 1),
+            bottom: BorderSide(color: context.colors.rule, width: 1),
           ),
         ),
         child: Column(
@@ -195,7 +195,7 @@ class _AccountRowState extends ConsumerState<AccountRow> {
               const TextStyle(
                 fontSize: 13,
                 fontWeight: FontWeight.w500,
-                color: AppColors.ink,
+                color: context.colors.ink,
               ),
             ),
             const SizedBox(height: 1),
@@ -206,7 +206,7 @@ class _AccountRowState extends ConsumerState<AccountRow> {
               widget.searchQuery,
               const TextStyle(
                 fontSize: 11,
-                color: AppColors.ink3,
+                color: context.colors.ink3,
               ),
             ),
             const SizedBox(height: 7),
@@ -230,7 +230,7 @@ class _AccountRowState extends ConsumerState<AccountRow> {
               height: 2,
               width: double.infinity,
               decoration: BoxDecoration(
-                color: AppColors.rule,
+                color: context.colors.rule,
                 borderRadius: BorderRadius.circular(2),
               ),
               child: Align(
@@ -254,7 +254,7 @@ class _AccountRowState extends ConsumerState<AccountRow> {
               style: TextStyle(
                 fontFamily: 'monospace',
                 fontSize: 10,
-                color: isWarning ? AppColors.danger : AppColors.ink4,
+                color: isWarning ? context.colors.danger : context.colors.ink4,
               ),
             ),
           ],
@@ -289,7 +289,7 @@ class _AccountRowState extends ConsumerState<AccountRow> {
             text: match,
             style: baseStyle.copyWith(
               decoration: TextDecoration.underline,
-              decorationColor: AppColors.accent,
+              decorationColor: context.colors.accent,
               decorationThickness: 2,
             ),
           ),

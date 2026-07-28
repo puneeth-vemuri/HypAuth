@@ -52,4 +52,36 @@ class Account {
       period: period ?? this.period,
     );
   }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'id': id,
+      'issuer': issuer,
+      'accountName': accountName,
+      'icon': icon,
+      'createdAt': createdAt.toIso8601String(),
+      'updatedAt': updatedAt.toIso8601String(),
+      'isFavorite': isFavorite,
+      'sortOrder': sortOrder,
+      'algorithm': algorithm,
+      'digits': digits,
+      'period': period,
+    };
+  }
+
+  factory Account.fromJson(Map<String, dynamic> json) {
+    return Account(
+      id: json['id'] as String,
+      issuer: json['issuer'] as String,
+      accountName: json['accountName'] as String,
+      icon: json['icon'] as String,
+      createdAt: DateTime.parse(json['createdAt'] as String),
+      updatedAt: DateTime.parse(json['updatedAt'] as String),
+      isFavorite: json['isFavorite'] as bool? ?? false,
+      sortOrder: json['sortOrder'] as int? ?? 0,
+      algorithm: json['algorithm'] as String? ?? 'SHA1',
+      digits: json['digits'] as int? ?? 6,
+      period: json['period'] as int? ?? 30,
+    );
+  }
 }

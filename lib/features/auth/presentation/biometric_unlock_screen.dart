@@ -85,7 +85,7 @@ class _BiometricUnlockScreenState extends ConsumerState<BiometricUnlockScreen>
     }
 
     return Scaffold(
-      backgroundColor: AppColors.paper,
+      backgroundColor: context.colors.paper,
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 20.0),
@@ -93,7 +93,7 @@ class _BiometricUnlockScreenState extends ConsumerState<BiometricUnlockScreen>
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const Spacer(),
-              const HypAuthLogoMark(size: 36, color: AppColors.ink),
+              const HypAuthLogoMark(size: 36, color: context.colors.ink),
               const SizedBox(height: 24),
               if (_failed) ...[
                 Text(
@@ -102,7 +102,7 @@ class _BiometricUnlockScreenState extends ConsumerState<BiometricUnlockScreen>
                     fontSize: 10,
                     letterSpacing: 1.2,
                     fontWeight: FontWeight.w500,
-                    color: AppColors.danger,
+                    color: context.colors.danger,
                   ),
                 ),
                 const SizedBox(height: 8),
@@ -114,7 +114,7 @@ class _BiometricUnlockScreenState extends ConsumerState<BiometricUnlockScreen>
                   fontWeight: FontWeight.w500,
                   letterSpacing: -0.26,
                   height: 1.25,
-                  color: AppColors.ink,
+                  color: context.colors.ink,
                 ),
               ),
               const SizedBox(height: 12),
@@ -122,7 +122,7 @@ class _BiometricUnlockScreenState extends ConsumerState<BiometricUnlockScreen>
                 'Your codes never leave this device, so there is no way to recover them remotely.',
                 style: TextStyle(
                   fontSize: 12,
-                  color: AppColors.ink3,
+                  color: context.colors.ink3,
                   height: 1.6,
                 ),
               ),
@@ -132,8 +132,8 @@ class _BiometricUnlockScreenState extends ConsumerState<BiometricUnlockScreen>
                 child: ElevatedButton(
                   onPressed: _triggerAuthentication,
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: AppColors.ink,
-                    foregroundColor: AppColors.paper,
+                    backgroundColor: context.colors.ink,
+                    foregroundColor: context.colors.paper,
                     padding: const EdgeInsets.symmetric(vertical: 14),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(24),
@@ -151,7 +151,7 @@ class _BiometricUnlockScreenState extends ConsumerState<BiometricUnlockScreen>
                     'Enter passcode',
                     style: TextStyle(
                       fontSize: 13,
-                      color: AppColors.ink2,
+                      color: context.colors.ink2,
                       fontWeight: FontWeight.w400,
                     ),
                   ),

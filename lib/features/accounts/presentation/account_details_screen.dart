@@ -96,7 +96,7 @@ class _AccountDetailsScreenState extends ConsumerState<AccountDetailsScreen> {
         '${widget.account.createdAt.day.toString().padLeft(2, '0')}.${widget.account.createdAt.month.toString().padLeft(2, '0')}.${widget.account.createdAt.year.toString().substring(2)}';
 
     return Scaffold(
-      backgroundColor: AppColors.paper,
+      backgroundColor: context.colors.paper,
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 21.0, vertical: 14.0),
@@ -115,7 +115,7 @@ class _AccountDetailsScreenState extends ConsumerState<AccountDetailsScreen> {
                         fontSize: 11,
                         letterSpacing: 1.0,
                         fontWeight: FontWeight.w500,
-                        color: AppColors.ink2,
+                        color: context.colors.ink2,
                       ),
                     ),
                   ),
@@ -132,8 +132,8 @@ class _AccountDetailsScreenState extends ConsumerState<AccountDetailsScreen> {
                         letterSpacing: 1.0,
                         fontWeight: FontWeight.w500,
                         color: widget.account.isFavorite
-                            ? AppColors.accent
-                            : AppColors.ink4,
+                            ? context.colors.accent
+                            : context.colors.ink4,
                       ),
                     ),
                   ),
@@ -148,7 +148,7 @@ class _AccountDetailsScreenState extends ConsumerState<AccountDetailsScreen> {
                   fontSize: 10,
                   letterSpacing: 1.2,
                   fontWeight: FontWeight.w500,
-                  color: AppColors.ink4,
+                  color: context.colors.ink4,
                 ),
               ),
               const SizedBox(height: 4),
@@ -156,7 +156,7 @@ class _AccountDetailsScreenState extends ConsumerState<AccountDetailsScreen> {
                 widget.account.accountName,
                 style: const TextStyle(
                   fontSize: 12,
-                  color: AppColors.ink3,
+                  color: context.colors.ink3,
                 ),
               ),
               const SizedBox(height: 20),
@@ -169,7 +169,7 @@ class _AccountDetailsScreenState extends ConsumerState<AccountDetailsScreen> {
                   fontSize: 40,
                   letterSpacing: 1.6, // +0.04em
                   fontWeight: FontWeight.w500,
-                  color: isWarning ? AppColors.danger : AppColors.ink,
+                  color: isWarning ? context.colors.danger : context.colors.ink,
                   height: 1.0,
                 ),
               ),
@@ -180,7 +180,7 @@ class _AccountDetailsScreenState extends ConsumerState<AccountDetailsScreen> {
                 height: 2,
                 width: double.infinity,
                 decoration: BoxDecoration(
-                  color: AppColors.rule,
+                  color: context.colors.rule,
                   borderRadius: BorderRadius.circular(2),
                 ),
                 child: Align(
@@ -189,7 +189,7 @@ class _AccountDetailsScreenState extends ConsumerState<AccountDetailsScreen> {
                     widthFactor: progressRatio.clamp(0.0, 1.0),
                     child: Container(
                       decoration: BoxDecoration(
-                        color: isWarning ? AppColors.danger : AppColors.accent,
+                        color: isWarning ? context.colors.danger : context.colors.accent,
                         borderRadius: BorderRadius.circular(2),
                       ),
                     ),
@@ -204,7 +204,7 @@ class _AccountDetailsScreenState extends ConsumerState<AccountDetailsScreen> {
                 style: TextStyle(
                   fontFamily: 'monospace',
                   fontSize: 10,
-                  color: isWarning ? AppColors.danger : AppColors.ink4,
+                  color: isWarning ? context.colors.danger : context.colors.ink4,
                 ),
               ),
               const SizedBox(height: 26),
@@ -213,7 +213,7 @@ class _AccountDetailsScreenState extends ConsumerState<AccountDetailsScreen> {
               Container(
                 decoration: const BoxDecoration(
                   border: Border(
-                    top: BorderSide(color: AppColors.rule, width: 1),
+                    top: BorderSide(color: context.colors.rule, width: 1),
                   ),
                 ),
                 child: Column(
@@ -234,8 +234,8 @@ class _AccountDetailsScreenState extends ConsumerState<AccountDetailsScreen> {
                 child: OutlinedButton(
                   onPressed: _confirmDelete,
                   style: OutlinedButton.styleFrom(
-                    foregroundColor: AppColors.danger,
-                    side: const BorderSide(color: AppColors.dangerRule, width: 1),
+                    foregroundColor: context.colors.danger,
+                    side: const BorderSide(color: context.colors.dangerRule, width: 1),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(24),
                     ),
@@ -258,7 +258,7 @@ class _AccountDetailsScreenState extends ConsumerState<AccountDetailsScreen> {
         border: isLast
             ? null
             : const Border(
-                bottom: BorderSide(color: AppColors.rule, width: 1),
+                bottom: BorderSide(color: context.colors.rule, width: 1),
               ),
       ),
       child: Row(
@@ -268,7 +268,7 @@ class _AccountDetailsScreenState extends ConsumerState<AccountDetailsScreen> {
             key,
             style: const TextStyle(
               fontSize: 12,
-              color: AppColors.ink3,
+              color: context.colors.ink3,
               fontWeight: FontWeight.w400,
             ),
           ),
@@ -277,7 +277,7 @@ class _AccountDetailsScreenState extends ConsumerState<AccountDetailsScreen> {
             style: const TextStyle(
               fontFamily: 'monospace',
               fontSize: 12,
-              color: AppColors.ink,
+              color: context.colors.ink,
             ),
           ),
         ],

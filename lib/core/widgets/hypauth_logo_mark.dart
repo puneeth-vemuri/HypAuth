@@ -1,6 +1,7 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
 import '../theme/app_theme.dart';
+import '../../core/theme/app_theme.dart';
 
 class HypAuthLogoMark extends StatelessWidget {
   final double size;
@@ -9,7 +10,7 @@ class HypAuthLogoMark extends StatelessWidget {
   const HypAuthLogoMark({
     super.key,
     this.size = 32.0,
-    this.color = AppColors.ink,
+    this.color = context.colors.ink,
   });
 
   @override

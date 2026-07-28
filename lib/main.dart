@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:screen_protector/screen_protector.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'core/router/app_router.dart';
+import 'core/services/preferences_service.dart';
 import 'core/theme/app_theme.dart';
 import 'features/settings/presentation/settings_providers.dart';
 
@@ -10,7 +12,11 @@ import 'features/accounts/presentation/account_providers.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   
-  final container = ProviderContainer();
+  final container = ProviderContainer(
+    overrides: [
+      preferencesServiceProvider.overrideWithValue(PreferencesService(await SharedPreferences.getInstance())),
+    ],
+  );
   await container.read(databaseServiceProvider).init();
 
   runApp(

@@ -67,7 +67,7 @@ class _QrScannerScreenState extends ConsumerState<QrScannerScreen> {
     showDialog(
       context: context,
       builder: (dialogCtx) => AlertDialog(
-        backgroundColor: AppColors.paper,
+        backgroundColor: context.colors.paper,
         title: const Text('Enter Key Manually', style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500)),
         content: SingleChildScrollView(
           child: Column(
@@ -93,7 +93,7 @@ class _QrScannerScreenState extends ConsumerState<QrScannerScreen> {
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(dialogCtx),
-            child: const Text('Cancel', style: TextStyle(color: AppColors.ink2)),
+            child: const Text('Cancel', style: TextStyle(color: context.colors.ink2)),
           ),
           ElevatedButton(
             onPressed: () async {
@@ -148,7 +148,7 @@ class _QrScannerScreenState extends ConsumerState<QrScannerScreen> {
     }
 
     return Scaffold(
-      backgroundColor: AppColors.ink,
+      backgroundColor: context.colors.ink,
       body: SafeArea(
         child: Stack(
           children: [
@@ -214,8 +214,8 @@ class _QrScannerScreenState extends ConsumerState<QrScannerScreen> {
                               height: 26,
                               decoration: const BoxDecoration(
                                 border: Border(
-                                  left: BorderSide(color: AppColors.paper, width: 1.5),
-                                  top: BorderSide(color: AppColors.paper, width: 1.5),
+                                  left: BorderSide(color: context.colors.paper, width: 1.5),
+                                  top: BorderSide(color: context.colors.paper, width: 1.5),
                                 ),
                               ),
                             ),
@@ -229,8 +229,8 @@ class _QrScannerScreenState extends ConsumerState<QrScannerScreen> {
                               height: 26,
                               decoration: const BoxDecoration(
                                 border: Border(
-                                  right: BorderSide(color: AppColors.paper, width: 1.5),
-                                  top: BorderSide(color: AppColors.paper, width: 1.5),
+                                  right: BorderSide(color: context.colors.paper, width: 1.5),
+                                  top: BorderSide(color: context.colors.paper, width: 1.5),
                                 ),
                               ),
                             ),
@@ -244,8 +244,8 @@ class _QrScannerScreenState extends ConsumerState<QrScannerScreen> {
                               height: 26,
                               decoration: const BoxDecoration(
                                 border: Border(
-                                  left: BorderSide(color: AppColors.paper, width: 1.5),
-                                  bottom: BorderSide(color: AppColors.paper, width: 1.5),
+                                  left: BorderSide(color: context.colors.paper, width: 1.5),
+                                  bottom: BorderSide(color: context.colors.paper, width: 1.5),
                                 ),
                               ),
                             ),
@@ -259,8 +259,8 @@ class _QrScannerScreenState extends ConsumerState<QrScannerScreen> {
                               height: 26,
                               decoration: const BoxDecoration(
                                 border: Border(
-                                  right: BorderSide(color: AppColors.paper, width: 1.5),
-                                  bottom: BorderSide(color: AppColors.paper, width: 1.5),
+                                  right: BorderSide(color: context.colors.paper, width: 1.5),
+                                  bottom: BorderSide(color: context.colors.paper, width: 1.5),
                                 ),
                               ),
                             ),
@@ -270,7 +270,7 @@ class _QrScannerScreenState extends ConsumerState<QrScannerScreen> {
                             child: Container(
                               margin: const EdgeInsets.symmetric(horizontal: 14),
                               height: 1,
-                              color: AppColors.accent,
+                              color: context.colors.accent,
                             ),
                           ),
                         ],

@@ -16,7 +16,7 @@ class ImportSuccessScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.paper,
+      backgroundColor: context.colors.paper,
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 20.0),
@@ -30,7 +30,7 @@ class ImportSuccessScreen extends StatelessWidget {
                   fontSize: 10,
                   letterSpacing: 1.2,
                   fontWeight: FontWeight.w500,
-                  color: AppColors.accent,
+                  color: context.colors.accent,
                 ),
               ),
               const SizedBox(height: 10),
@@ -39,7 +39,7 @@ class ImportSuccessScreen extends StatelessWidget {
                 style: const TextStyle(
                   fontSize: 24,
                   fontWeight: FontWeight.w500,
-                  color: AppColors.ink,
+                  color: context.colors.ink,
                   letterSpacing: -0.15,
                 ),
               ),
@@ -48,14 +48,14 @@ class ImportSuccessScreen extends StatelessWidget {
                 account.accountName,
                 style: const TextStyle(
                   fontSize: 12,
-                  color: AppColors.ink3,
+                  color: context.colors.ink3,
                 ),
               ),
               const SizedBox(height: 26),
               Container(
                 decoration: const BoxDecoration(
                   border: Border(
-                    top: BorderSide(color: AppColors.rule, width: 1),
+                    top: BorderSide(color: context.colors.rule, width: 1),
                   ),
                 ),
                 child: Column(
@@ -72,8 +72,8 @@ class ImportSuccessScreen extends StatelessWidget {
                 child: ElevatedButton(
                   onPressed: () => context.go('/'),
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: AppColors.ink,
-                    foregroundColor: AppColors.paper,
+                    backgroundColor: context.colors.ink,
+                    foregroundColor: context.colors.paper,
                     padding: const EdgeInsets.symmetric(vertical: 14),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(24),
@@ -91,7 +91,7 @@ class ImportSuccessScreen extends StatelessWidget {
                     'Scan another',
                     style: TextStyle(
                       fontSize: 13,
-                      color: AppColors.ink2,
+                      color: context.colors.ink2,
                       fontWeight: FontWeight.w400,
                     ),
                   ),
@@ -111,7 +111,7 @@ class ImportSuccessScreen extends StatelessWidget {
         border: isLast
             ? null
             : const Border(
-                bottom: BorderSide(color: AppColors.rule, width: 1),
+                bottom: BorderSide(color: context.colors.rule, width: 1),
               ),
       ),
       child: Row(
@@ -121,7 +121,7 @@ class ImportSuccessScreen extends StatelessWidget {
             key,
             style: const TextStyle(
               fontSize: 12,
-              color: AppColors.ink3,
+              color: context.colors.ink3,
               fontWeight: FontWeight.w400,
             ),
           ),
@@ -130,7 +130,7 @@ class ImportSuccessScreen extends StatelessWidget {
             style: const TextStyle(
               fontFamily: 'monospace',
               fontSize: 12,
-              color: AppColors.ink,
+              color: context.colors.ink,
             ),
           ),
         ],

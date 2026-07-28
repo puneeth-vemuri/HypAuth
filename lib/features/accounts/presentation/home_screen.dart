@@ -15,7 +15,7 @@ class HomeScreen extends ConsumerWidget {
     final accounts = accountsStream.value ?? [];
 
     return Scaffold(
-      backgroundColor: AppColors.paper,
+      backgroundColor: context.colors.paper,
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 21.0, vertical: 14.0),
@@ -37,7 +37,7 @@ class HomeScreen extends ConsumerWidget {
                           fontSize: 10,
                           letterSpacing: 1.2,
                           fontWeight: FontWeight.w500,
-                          color: AppColors.ink4,
+                          color: context.colors.ink4,
                         ),
                       ),
                       const SizedBox(height: 3),
@@ -46,7 +46,7 @@ class HomeScreen extends ConsumerWidget {
                         style: TextStyle(
                           fontSize: 21,
                           fontWeight: FontWeight.w500,
-                          color: AppColors.ink,
+                          color: context.colors.ink,
                           letterSpacing: -0.15,
                         ),
                       ),
@@ -62,7 +62,7 @@ class HomeScreen extends ConsumerWidget {
                             fontSize: 11,
                             letterSpacing: 1.0,
                             fontWeight: FontWeight.w500,
-                            color: AppColors.ink4,
+                            color: context.colors.ink4,
                           ),
                         ),
                       ),
@@ -75,7 +75,7 @@ class HomeScreen extends ConsumerWidget {
                             fontSize: 11,
                             letterSpacing: 1.0,
                             fontWeight: FontWeight.w500,
-                            color: AppColors.ink4,
+                            color: context.colors.ink4,
                           ),
                         ),
                       ),
@@ -97,7 +97,7 @@ class HomeScreen extends ConsumerWidget {
                               style: TextStyle(
                                 fontSize: 13,
                                 fontWeight: FontWeight.w500,
-                                color: AppColors.ink,
+                                color: context.colors.ink,
                               ),
                             ),
                             SizedBox(height: 4),
@@ -105,7 +105,7 @@ class HomeScreen extends ConsumerWidget {
                               'Scan a QR code to import your TOTP account.',
                               style: TextStyle(
                                 fontSize: 12,
-                                color: AppColors.ink3,
+                                color: context.colors.ink3,
                               ),
                             ),
                           ],
@@ -137,8 +137,8 @@ class HomeScreen extends ConsumerWidget {
                 child: ElevatedButton(
                   onPressed: () => context.push('/scanner'),
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: AppColors.ink,
-                    foregroundColor: AppColors.paper,
+                    backgroundColor: context.colors.ink,
+                    foregroundColor: context.colors.paper,
                     padding: const EdgeInsets.symmetric(vertical: 14),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(24),

@@ -40,7 +40,7 @@ class _SearchScreenState extends ConsumerState<SearchScreen> {
     final query = ref.watch(searchQueryProvider);
 
     return Scaffold(
-      backgroundColor: AppColors.paper,
+      backgroundColor: context.colors.paper,
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 21.0, vertical: 14.0),
@@ -52,7 +52,7 @@ class _SearchScreenState extends ConsumerState<SearchScreen> {
                 padding: const EdgeInsets.only(bottom: 14),
                 decoration: const BoxDecoration(
                   border: Border(
-                    bottom: BorderSide(color: AppColors.ink, width: 1),
+                    bottom: BorderSide(color: context.colors.ink, width: 1),
                   ),
                 ),
                 child: Row(
@@ -63,11 +63,11 @@ class _SearchScreenState extends ConsumerState<SearchScreen> {
                         autofocus: true,
                         style: const TextStyle(
                           fontSize: 15,
-                          color: AppColors.ink,
+                          color: context.colors.ink,
                         ),
                         decoration: const InputDecoration(
                           hintText: 'Search accounts...',
-                          hintStyle: TextStyle(color: AppColors.ink4),
+                          hintStyle: TextStyle(color: context.colors.ink4),
                           border: InputBorder.none,
                           isDense: true,
                           contentPadding: EdgeInsets.zero,
@@ -88,7 +88,7 @@ class _SearchScreenState extends ConsumerState<SearchScreen> {
                         'Clear',
                         style: TextStyle(
                           fontSize: 11,
-                          color: AppColors.ink4,
+                          color: context.colors.ink4,
                         ),
                       ),
                     ),
@@ -104,7 +104,7 @@ class _SearchScreenState extends ConsumerState<SearchScreen> {
                   fontSize: 10,
                   letterSpacing: 1.2,
                   fontWeight: FontWeight.w500,
-                  color: AppColors.ink4,
+                  color: context.colors.ink4,
                 ),
               ),
               const SizedBox(height: 6),
@@ -119,7 +119,7 @@ class _SearchScreenState extends ConsumerState<SearchScreen> {
                               : 'Type to search accounts',
                           style: const TextStyle(
                             fontSize: 12,
-                            color: AppColors.ink3,
+                            color: context.colors.ink3,
                           ),
                         ),
                       )
@@ -151,7 +151,7 @@ class _SearchScreenState extends ConsumerState<SearchScreen> {
                   'Searches issuer, account, and email.',
                   style: TextStyle(
                     fontSize: 11,
-                    color: AppColors.ink4,
+                    color: context.colors.ink4,
                     height: 1.55,
                   ),
                 ),
