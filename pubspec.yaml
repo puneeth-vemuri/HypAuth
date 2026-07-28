@@ -29,6 +29,13 @@ dev_dependencies:
   isar_generator: ^3.1.0+1
   build_runner: ^2.4.8
   mocktail: ^1.0.3
+  flutter_launcher_icons: ^0.13.1
+
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "assets/icon/app_icon.jpg"
+  remove_alpha_ios: true
 
 flutter:
   uses-material-design: true

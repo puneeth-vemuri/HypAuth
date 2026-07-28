@@ -11,6 +11,9 @@ workflows:
       - name: Get Flutter packages
         script: |
           flutter packages pub get
+      - name: Generate App Icon
+        script: |
+          dart run flutter_launcher_icons
       - name: Generate Flutter engine files
         script: |
           flutter build ios --release --no-codesign || true
