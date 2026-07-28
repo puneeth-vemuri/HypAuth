@@ -49,7 +49,7 @@ class _SearchScreenState extends ConsumerState<SearchScreen> {
             children: [
               // Search Bar Header
               Container(
-                padding: const EdgeInsets.bottom: 14,
+                padding: const EdgeInsets.only(bottom: 14),
                 decoration: const BoxDecoration(
                   border: Border(
                     bottom: BorderSide(color: AppColors.ink, width: 1),

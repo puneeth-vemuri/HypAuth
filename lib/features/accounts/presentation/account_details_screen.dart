@@ -185,7 +185,7 @@ class _AccountDetailsScreenState extends ConsumerState<AccountDetailsScreen> {
                 ),
                 child: Align(
                   alignment: Alignment.centerLeft,
-                  child: FractionalSizedBox(
+                  child: FractionallySizedBox(
                     widthFactor: progressRatio.clamp(0.0, 1.0),
                     child: Container(
                       decoration: BoxDecoration(

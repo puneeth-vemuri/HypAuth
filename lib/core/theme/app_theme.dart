@@ -19,6 +19,8 @@ class AppColors {
   static const Color darkSurface = ink;
   static const Color darkTextPrimary = paper;
   static const Color darkError = danger;
+  static const Color darkAccent = accent;
+  static const Color darkPrimary = accent;
   static const Color lightBackground = paper;
   static const Color lightSurface = paper;
   static const Color lightTextPrimary = ink;
@@ -42,7 +44,6 @@ class AppTheme {
       appBarTheme: const AppBarTheme(
         backgroundColor: AppColors.paper,
         elevation: 0,
-        scaffoldBackgroundColor: AppColors.paper,
         iconTheme: IconThemeData(color: AppColors.ink),
         titleTextStyle: TextStyle(
           color: AppColors.ink,

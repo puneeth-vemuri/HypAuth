@@ -36,7 +36,7 @@ class _HypAuthLogoPainter extends CustomPainter {
 
     // Outer circle ring
     final ringPaint = Paint()
-      color = color
+      ..color = color
       ..style = PaintingStyle.stroke
       ..strokeWidth = 1.5;
     canvas.drawCircle(center, radius, ringPaint);
