@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:screen_protector/screen_protector.dart';
 import 'core/router/app_router.dart';
 import 'core/theme/app_theme.dart';
 import 'features/settings/presentation/settings_providers.dart';
@@ -20,8 +21,31 @@ void main() async {
   );
 }
 
-class HypAuthApp extends ConsumerWidget {
+class HypAuthApp extends ConsumerStatefulWidget {
   const HypAuthApp({super.key});
+
+  @override
+  ConsumerState<HypAuthApp> createState() => _HypAuthAppState();
+}
+
+class _HypAuthAppState extends ConsumerState<HypAuthApp> {
+  @override
+  void initState() {
+    super.initState();
+    _initScreenProtection();
+  }
+
+  Future<void> _initScreenProtection() async {
+    await ScreenProtector.protectDataLeakageOn();
+    await ScreenProtector.preventScreenshotOn();
+  }
+
+  @override
+  void dispose() {
+    ScreenProtector.protectDataLeakageOff();
+    ScreenProtector.preventScreenshotOff();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
