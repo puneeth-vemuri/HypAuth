@@ -1,0 +1,42 @@
+# Miscellaneous
+*.class
+*.log
+*.pyc
+*.swp
+.DS_Store
+.atom/
+.buildlog/
+.history
+.svn/
+migrate_working_dir/
+
+# IntelliJ
+*.iml
+*.ipr
+*.iws
+.idea/
+
+# Android Studio / Android
+.gradle/
+local.properties
+/android/app/debug
+/android/app/profile
+/android/app/release
+
+# iOS / Xcode
+**/DerivedData/
+*.moved-aside
+*.xccheckout
+*.xcscmblueprint
+
+# Flutter
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+.pub/
+/build/
+
+# Coverage
+coverage/

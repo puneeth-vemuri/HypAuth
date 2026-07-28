@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HypAuth 1.0 screen designs</title>
+<style>
+:root{
+  --paper:#FCFBF8;
+  --ink:#1A1A18;
+  --ink-2:#4A4842;
+  --ink-3:#8D8B82;
+  --ink-4:#A8A69C;
+  --rule:#EDEBE3;
+  --rule-2:#DEDCD4;
+  --accent:#534AB7;
+  --danger:#A32D2D;
+  --danger-rule:#E8CFCF;
+  --wash:#F5F3EC;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --mono:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,monospace;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--wash);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.65;-webkit-font-smoothing:antialiased}
+.page{max-width:1180px;margin:0 auto;padding:56px 28px 96px}
+.eyebrow{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-4);margin:0}
+h1{font-size:34px;font-weight:500;letter-spacing:-.02em;margin:10px 0 0;line-height:1.15}
+h2{font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:500;margin:0;color:var(--ink)}
+.lede{max-width:56ch;color:var(--ink-3);font-size:15px;margin:14px 0 0}
+.band{border-top:1px solid var(--ink);margin-top:48px;padding-top:22px}
+.band.soft{border-top-color:var(--rule-2)}
+.meta{display:flex;flex-wrap:wrap;gap:28px;margin-top:22px;font-size:12px;color:var(--ink-3)}
+.meta b{display:block;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-4);font-weight:500}
+.meta span{font-family:var(--mono);color:var(--ink)}
+
+.tokens{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:1px;background:var(--rule-2);margin-top:22px;border:1px solid var(--rule-2)}
+.tk{background:var(--paper);padding:14px 16px}
+.chip{width:26px;height:26px;border-radius:50%;border:1px solid rgba(0,0,0,.08);margin-bottom:10px}
+.tk .nm{font-size:12px;font-weight:500}
+.tk .hx{font-family:var(--mono);font-size:11px;color:var(--ink-3)}
+.tk .us{font-size:11px;color:var(--ink-3);margin-top:6px;line-height:1.5}
+
+.scale{margin-top:22px;border-top:1px solid var(--rule)}
+.sr{display:grid;grid-template-columns:120px 1fr auto;gap:16px;align-items:baseline;padding:12px 0;border-bottom:1px solid var(--rule)}
+.sr .k{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-4)}
+.sr .v{font-family:var(--mono);font-size:11px;color:var(--ink-3);text-align:right}
+
+.rules{margin-top:22px;columns:2;column-gap:44px;font-size:13px;color:var(--ink-2)}
+.rules p{margin:0 0 12px;break-inside:avoid}
+.rules b{font-weight:500;color:var(--ink)}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:44px 32px;margin-top:26px}
+.item{min-width:0}
+.num{font-family:var(--mono);font-size:11px;color:var(--accent);letter-spacing:.06em}
+.nme{font-size:16px;font-weight:500;margin:2px 0 0;letter-spacing:-.01em}
+.spec{font-size:12.5px;color:var(--ink-3);margin:8px 0 0;line-height:1.6}
+.spec b{color:var(--ink-2);font-weight:500}
+.tag{display:inline-block;font-family:var(--mono);font-size:10px;letter-spacing:.04em;color:var(--ink-3);border:1px solid var(--rule-2);border-radius:3px;padding:1px 6px;margin:10px 6px 0 0}
+.tag.v2{color:var(--accent);border-color:#CFCCEE}
+
+/* device */
+.dev{background:var(--paper);border:1px solid var(--rule-2);border-radius:24px;height:520px;overflow:hidden;display:flex;flex-direction:column;font-size:13px;position:relative;margin-bottom:16px}
+.dev.dark{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.sbar{display:flex;justify-content:space-between;padding:13px 21px 0;font-size:10px;color:var(--ink-4);letter-spacing:.03em;flex:0 0 auto}
+.dev.dark .sbar{color:#7A786F}
+.body{padding:14px 21px 20px;flex:1;display:flex;flex-direction:column;min-height:0}
+.grow{flex:1}
+.wordmark{font-size:12px;letter-spacing:.15em;text-transform:uppercase}
+.mark{width:32px;height:32px;border:1.5px solid currentColor;border-radius:50%;position:relative}
+.mark i{position:absolute;left:50%;top:5px;width:1.5px;height:12px;background:currentColor;transform-origin:bottom;transform:rotate(38deg)}
+.ttl{font-size:21px;font-weight:500;letter-spacing:-.01em;margin:0}
+.big{font-size:26px;font-weight:500;letter-spacing:-.01em;line-height:1.25;margin:0}
+.lab{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-4);margin:0}
+.hint{font-size:12px;color:var(--ink-3);line-height:1.6}
+.tiny{font-size:11px;color:var(--ink-4);line-height:1.55}
+
+.acct{padding:15px 0;border-bottom:1px solid var(--rule)}
+.acct:last-child{border-bottom:0}
+.iss{font-size:13px;font-weight:500}
+.eml{font-size:11px;color:var(--ink-3);margin-top:1px}
+.code{font-family:var(--mono);font-size:27px;letter-spacing:.06em;margin-top:7px;line-height:1}
+.track{height:2px;background:var(--rule);margin-top:10px;border-radius:2px;overflow:hidden}
+.track i{display:block;height:100%;background:var(--accent)}
+.secs{font-family:var(--mono);font-size:10px;color:var(--ink-4);margin-top:5px}
+.warn{color:var(--danger)}
+.warn i{background:var(--danger)}
+
+.btn{border-radius:24px;padding:12px 0;text-align:center;font-size:13px;font-weight:500;background:var(--ink);color:var(--paper)}
+.btn.red{background:var(--danger)}
+.btn.ghost{background:none;border:1px solid var(--rule-2);color:var(--ink-2)}
+.btn.quiet{background:none;color:var(--ink-2);font-weight:400}
+.dev.dark .btn.ghost{border-color:#3A3835;color:#C9C7BE}
+
+.rowi{display:flex;align-items:center;gap:14px;padding:14px 0;border-bottom:1px solid var(--rule);font-size:13px}
+.rowi .fill{flex:1;min-width:0}
+.sw{width:34px;height:20px;border-radius:11px;background:var(--accent);display:flex;align-items:center;justify-content:flex-end;padding:0 2px;flex:0 0 auto}
+.sw i{width:16px;height:16px;border-radius:50%;background:var(--paper);display:block}
+.kv{display:flex;justify-content:space-between;padding:11px 0;border-bottom:1px solid var(--rule);font-size:12px}
+.kv b{font-weight:400;color:var(--ink-3)}
+.kv span{font-family:var(--mono)}
+.gl{width:19px;height:19px;position:relative;flex:0 0 auto}
+.gl b,.gl i{position:absolute;background:currentColor;display:block}
+.gl b{left:0;right:0;height:1.5px;top:5px}
+.gl i{left:0;right:0;height:1.5px;top:12px}
+.dot{width:11px;height:11px;border-radius:50%;border:1.2px solid var(--ink)}
+.dot.on{background:var(--ink)}
+.key{font-family:var(--mono);font-size:22px;text-align:center;padding:13px 0}
+.key em{display:block;font-style:normal;font-size:8px;letter-spacing:.1em;color:var(--ink-4);margin-top:1px}
+.overlay{position:absolute;inset:0;background:rgba(26,26,24,.32);display:flex;padding:16px}
+.sheet{background:var(--paper);border-radius:18px;padding:22px;width:100%;align-self:flex-end}
+.sysheet{background:#F2F1EC;border:1px solid var(--rule-2);border-radius:16px;padding:20px;width:100%;text-align:center;align-self:center}
+.faceid{width:36px;height:36px;margin:0 auto 12px;border:1.5px solid var(--ink);border-radius:9px;position:relative}
+.faceid b,.faceid i,.faceid u{position:absolute;background:var(--ink);display:block}
+.faceid b{left:9px;top:11px;width:2px;height:6px}
+.faceid i{right:9px;top:11px;width:2px;height:6px}
+.faceid u{left:11px;right:11px;bottom:9px;height:1.5px}
+.toast{position:absolute;left:21px;right:21px;bottom:86px;background:var(--ink);color:var(--paper);border-radius:12px;padding:12px 16px;display:flex;justify-content:space-between;align-items:center;font-size:12px}
+.toast em{font-style:normal;font-family:var(--mono);color:#9C9A91;font-size:11px}
+.finder{align-self:center;width:170px;height:170px;position:relative}
+.finder u{position:absolute;width:26px;height:26px;display:block}
+.finder u:nth-child(1){left:0;top:0;border-left:1.5px solid var(--paper);border-top:1.5px solid var(--paper)}
+.finder u:nth-child(2){right:0;top:0;border-right:1.5px solid var(--paper);border-top:1.5px solid var(--paper)}
+.finder u:nth-child(3){left:0;bottom:0;border-left:1.5px solid var(--paper);border-bottom:1.5px solid var(--paper)}
+.finder u:nth-child(4){right:0;bottom:0;border-right:1.5px solid var(--paper);border-bottom:1.5px solid var(--paper)}
+.finder b{position:absolute;left:14px;right:14px;top:50%;height:1px;background:var(--accent);display:block}
+.foot{border-top:1px solid var(--ink);margin-top:60px;padding-top:20px;font-size:12px;color:var(--ink-3);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+@media print{body{background:#fff}.page{padding:0}.dev{break-inside:avoid}}
+@media (max-width:640px){.rules{columns:1}h1{font-size:27px}.page{padding:36px 18px 64px}}
+</style>
+</head>
+<body>
+<div class="page">
+
+<p class="eyebrow">Design specification, version 1.0</p>
+<h1>HypAuth</h1>
+<p class="lede">Thirteen screens for an offline TOTP authenticator. iOS and Android, single Flutter codebase, no backend. Codes are generated on device and secrets never leave the Keychain or Keystore.</p>
+
+<div class="meta">
+  <div><b>Platform</b>Flutter, Material 3</div>
+  <div><b>Primary target</b>iOS, Face ID</div>
+  <div><b>Mode</b>Light only in V1</div>
+  <div><b>Screens</b><span>13</span></div>
+  <div><b>Status</b>Ready for build</div>
+</div>
+
+<div class="band">
+<h2>Palette</h2>
+<div class="tokens">
+  <div class="tk"><div class="chip" style="background:#FCFBF8"></div><div class="nm">Paper</div><div class="hx">#FCFBF8</div><div class="us">Every surface. Warm white, never pure white.</div></div>
+  <div class="tk"><div class="chip" style="background:#1A1A18"></div><div class="nm">Ink</div><div class="hx">#1A1A18</div><div class="us">All primary text, codes, filled buttons, scanner background.</div></div>
+  <div class="tk"><div class="chip" style="background:#4A4842"></div><div class="nm">Ink 2</div><div class="hx">#4A4842</div><div class="us">Secondary actions and quiet button labels.</div></div>
+  <div class="tk"><div class="chip" style="background:#8D8B82"></div><div class="nm">Ink 3</div><div class="hx">#8D8B82</div><div class="us">Body copy, account emails, key labels.</div></div>
+  <div class="tk"><div class="chip" style="background:#A8A69C"></div><div class="nm">Ink 4</div><div class="hx">#A8A69C</div><div class="us">Micro labels, seconds counters, inactive icons.</div></div>
+  <div class="tk"><div class="chip" style="background:#EDEBE3"></div><div class="nm">Rule</div><div class="hx">#EDEBE3</div><div class="us">Default 1px divider and empty countdown track.</div></div>
+  <div class="tk"><div class="chip" style="background:#DEDCD4"></div><div class="nm">Rule 2</div><div class="hx">#DEDCD4</div><div class="us">Outlined button borders and stronger dividers.</div></div>
+  <div class="tk"><div class="chip" style="background:#F5F3EC"></div><div class="nm">Wash</div><div class="hx">#F5F3EC</div><div class="us">The only fill in the app. Active drag row only.</div></div>
+  <div class="tk"><div class="chip" style="background:#534AB7"></div><div class="nm">Accent</div><div class="hx">#534AB7</div><div class="us">Countdown fill, search match, active handle, toggles, scan line. Nowhere else.</div></div>
+  <div class="tk"><div class="chip" style="background:#A32D2D"></div><div class="nm">Danger</div><div class="hx">#A32D2D</div><div class="us">A state, not an accent. Final 10 seconds, failed unlock, removal.</div></div>
+</div>
+</div>
+
+<div class="band soft">
+<h2>Type scale</h2>
+<div class="scale">
+  <div class="sr"><div class="k">Display</div><div><span style="font-size:26px;font-weight:500;letter-spacing:-.01em">Your codes are waiting</span></div><div class="v">26 / 500 / -0.01em</div></div>
+  <div class="sr"><div class="k">Title</div><div><span style="font-size:21px;font-weight:500;letter-spacing:-.01em">Codes</span></div><div class="v">21 / 500 / -0.01em</div></div>
+  <div class="sr"><div class="k">Code</div><div><span style="font-family:var(--mono);font-size:27px;letter-spacing:.06em">418 902</span></div><div class="v">27 / mono / +0.06em</div></div>
+  <div class="sr"><div class="k">Code, detail</div><div><span style="font-family:var(--mono);font-size:40px;letter-spacing:.04em">418 902</span></div><div class="v">40 / mono / +0.04em</div></div>
+  <div class="sr"><div class="k">Issuer</div><div><span style="font-size:13px;font-weight:500">GitHub</span></div><div class="v">13 / 500</div></div>
+  <div class="sr"><div class="k">Body</div><div><span style="font-size:12px;color:var(--ink-3)">Your codes never leave this device.</span></div><div class="v">12 / 400 / 1.6</div></div>
+  <div class="sr"><div class="k">Micro label</div><div><span class="lab">4 accounts</span></div><div class="v">10 / 500 / +0.12em / upper</div></div>
+</div>
+<p class="spec" style="margin-top:14px">Two weights only, 400 and 500. Nothing is bold beyond 500. Codes and any machine value use the mono face so digits align across rows. Everything else is sentence case.</p>
+</div>
+
+<div class="band soft">
+<h2>Standing rules</h2>
+<div class="rules">
+<p><b>No filled containers.</b> Grouping is done with a 1px hairline or with whitespace. There is no Card anywhere in this app. The single exception is the active drag row, which uses Wash.</p>
+<p><b>No border radius on containers.</b> Radius appears only on buttons (24px pill), sheets (18px), and the device frame itself. Rows and dividers stay square.</p>
+<p><b>The code is the largest thing on screen.</b> If any element competes with it for weight, that element is wrong.</p>
+<p><b>One accent, five uses.</b> Countdown fill, search match underline, active drag handle, toggles, scan line. Adding a sixth use dilutes it.</p>
+<p><b>Danger is a state.</b> Red appears in the final 10 seconds of a code, on failed unlock, and on removal. It is never decorative.</p>
+<p><b>Secrets are never rendered.</b> No screen displays, reveals, or exports a TOTP secret in V1. There is no UI code path that reads one.</p>
+<p><b>Bottom weighting.</b> Primary actions sit in the lower third, within thumb reach. Titles may sit high; buttons never do.</p>
+<p><b>Copy names its consequence.</b> Destructive confirmations state what is lost, not just what is deleted.</p>
+</div>
+</div>
+
+<div class="band">
+<h2>Screens</h2>
+<div class="grid">
+
+<div class="item">
+  <div class="dev" style="align-items:center;justify-content:center;gap:22px">
+    <div class="mark"><i></i></div>
+    <div class="wordmark">HypAuth</div>
+  </div>
+  <div class="num">01</div>
+  <p class="nme">Splash</p>
+  <p class="spec">Visible only while Isar opens and secure storage warms. Budget is <b>under 500ms</b>; if it exceeds that, hold the mark rather than showing a spinner. The mark is a stroke sweeping a circle, the countdown motif in miniature.</p>
+  <span class="tag">no spinner</span><span class="tag">&lt;500ms</span>
+</div>
+
+<div class="item">
+  <div class="dev">
+    <div class="sbar"><span>9:41</span><span>100%</span></div>
+    <div class="body" style="justify-content:center;align-items:center;gap:18px">
+      <div class="mark" style="color:#C9C7BE"><i></i></div>
+      <div class="wordmark" style="color:#C9C7BE">HypAuth</div>
+    </div>
+    <div class="overlay" style="padding:22px">
+      <div class="sysheet">
+        <div class="faceid"><b></b><i></i><u></u></div>
+        <div style="font-size:13px;font-weight:500">Face ID</div>
+        <div class="hint" style="margin-top:5px">Unlock HypAuth</div>
+        <div style="border-top:1px solid var(--rule-2);margin-top:15px;padding-top:11px;font-size:13px;color:var(--ink-2)">Cancel</div>
+      </div>
+    </div>
+  </div>
+  <div class="num">02</div>
+  <p class="nme">Unlock, system prompt</p>
+  <p class="spec">iOS draws this sheet. You cannot restyle it. All you control is the muted wordmark behind, which is deliberately low contrast so nothing is legible over the shoulder. The prompt text comes from <b>localizedReason</b>. Requires <b>NSFaceIDUsageDescription</b> in Info.plist or the app crashes on first call.</p>
+  <span class="tag">local_auth</span><span class="tag">biometricOnly: false</span>
+</div>
+
+<div class="item">
+  <div class="dev">
+    <div class="sbar"><span>9:41</span><span>100%</span></div>
+    <div class="body" style="justify-content:flex-end">
+      <div class="grow"></div>
+      <div class="mark" style="margin-bottom:24px"><i></i></div>
+      <p class="lab" style="color:var(--danger)">Face ID not recognised</p>
+      <p class="big" style="margin:8px 0 10px">Try again, or<br>use your passcode</p>
+      <p class="hint" style="margin:0 0 28px">Your codes never leave this device, so there is no way to recover them remotely.</p>
+      <div class="btn">Try Face ID again</div>
+      <div class="btn quiet" style="margin-top:5px">Enter passcode</div>
+    </div>
+  </div>
+  <div class="num">03</div>
+  <p class="nme">Unlock, retry</p>
+  <p class="spec">Where the user lands after a failed or cancelled scan. Show the red label only on genuine failure: <b>local_auth returns plain false for both cancel and reject</b>, so read the PlatformException code to tell them apart. Cancelled means no red label.</p>
+  <span class="tag">error code, not bool</span>
+</div>
+
+<div class="item">
+  <div class="dev">
+    <div class="sbar"><span>9:41</span><span>100%</span></div>
+    <div class="body">
+      <div style="text-align:right;font-size:13px;color:var(--ink-2)">Cancel</div>
+      <div class="grow"></div>
+      <div style="text-align:center">
+        <div style="font-size:15px;font-weight:500">Enter passcode</div>
+        <div style="display:flex;gap:15px;justify-content:center;margin-top:20px">
+          <div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+        </div>
+      </div>
+      <div class="grow"></div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;border-top:1px solid var(--rule)">
+        <div class="key">1</div><div class="key">2<em>ABC</em></div><div class="key">3<em>DEF</em></div>
+        <div class="key">4<em>GHI</em></div><div class="key">5<em>JKL</em></div><div class="key">6<em>MNO</em></div>
+        <div class="key">7<em>PQRS</em></div><div class="key">8<em>TUV</em></div><div class="key">9<em>WXYZ</em></div>
+        <div class="key" style="font-size:12px;color:var(--ink-4)">Face ID</div><div class="key">0</div><div class="key" style="color:var(--ink-4);font-size:16px">&#9003;</div>
+      </div>
+    </div>
+  </div>
+  <div class="num">04</div>
+  <p class="nme">App passcode, deferred</p>
+  <p class="spec"><b>Not built in V1.</b> With biometricOnly false, iOS validates the device passcode itself and this screen is unnecessary. An app-specific passcode means owning a secret: KDF, salt, Keychain verifier, attempt lockout, and no recovery path without a backend. Revisit only if the passcode should derive the vault key.</p>
+  <span class="tag v2">V2</span><span class="tag">reference only</span>
+</div>
+
+<div class="item">
+  <div class="dev">
+    <div class="sbar"><span>9:41</span><span>100%</span></div>
+    <div class="body">
+      <div style="display:flex;justify-content:space-between;align-items:baseline">
+        <div><p class="lab">4 accounts</p><p class="ttl" style="margin-top:3px">Codes</p></div>
+        <div style="display:flex;gap:16px;color:var(--ink-4);font-size:11px;letter-spacing:.1em;text-transform:uppercase">Search &nbsp; Settings</div>
+      </div>
+      <div style="margin-top:14px">
+        <div class="acct">
+          <div class="iss">GitHub</div><div class="eml">user@gmail.com</div>
+          <div class="code">418 902</div>
+          <div class="track"><i style="width:73%"></i></div>
+          <div class="secs">22s</div>
+        </div>
+        <div class="acct">
+          <div class="iss">AWS</div><div class="eml">admin@example.com</div>
+          <div class="code warn">730 156</div>
+          <div class="track warn"><i style="width:26%"></i></div>
+          <div class="secs warn">8s</div>
+        </div>
+        <div class="acct">
+          <div class="iss">Slack</div><div class="eml">work@example.com</div>
+          <div class="code">6941 2270</div>
+          <div class="track"><i style="width:88%"></i></div>
+          <div class="secs">27s</div>
+        </div>
+      </div>
+      <div class="grow"></div>
+      <div class="btn">Add account</div>
+    </div>
+  </div>
+  <div class="num">05</div>
+  <p class="nme">Home</p>
+  <p class="spec">The whole product. Codes stay visible because the app is already gated behind Face ID. Drive the countdown from <b>one ticker at the list root</b> and pass the tick down, never one AnimationController per row. Regenerate the code on the period boundary, not on every tick. Under 10 seconds the code, track, and counter all turn Danger together.</p>
+  <span class="tag">single ticker</span><span class="tag">&lt;5ms per code</span>
+</div>
+
+<div class="item">
+  <div class="dev">
+    <div class="sbar"><span>9:41</span><span>100%</span></div>
+    <div class="body">
+      <div style="display:flex;justify-content:space-between;align-items:baseline">
+        <div><p class="lab">4 accounts</p><p class="ttl" style="margin-top:3px">Codes</p></div>
+      </div>
+      <div style="margin-top:14px">
+        <div class="acct">
+          <div class="iss">GitHub</div><div class="eml">user@gmail.com</div>
+          <div class="code" style="color:var(--accent)">418 902</div>
+          <div class="track"><i style="width:70%"></i></div>
+          <div class="secs">21s</div>
+        </div>
+        <div class="acct">
+          <div class="iss">AWS</div><div class="eml">admin@example.com</div>
+          <div class="code">730 156</div>
+          <div class="track"><i style="width:24%"></i></div>
+        </div>
+      </div>
+      <div class="grow"></div>
+      <div class="btn" style="opacity:.25">Add account</div>
+    </div>
+    <div class="toast"><span>Code copied</span><em>Clears in 45s</em></div>
+  </div>
+  <div class="num">06</div>
+  <p class="nme">Home, code copied</p>
+  <p class="spec">Tap anywhere on a row to copy. The copied code flashes Accent for 600ms, then returns to Ink. Toast states the clipboard expiry so the promise is visible. Fire a <b>light haptic on copy</b>. The clipboard clear timer must survive backgrounding, so schedule it rather than relying on a widget timer.</p>
+  <span class="tag">haptic light</span><span class="tag">45s default</span>
+</div>
+
+<div class="item">
+  <div class="dev">
+    <div class="sbar"><span>9:41</span><span>100%</span></div>
+    <div class="body">
+      <div style="display:flex;align-items:center;gap:12px;padding-bottom:14px;border-bottom:1px solid var(--ink)">
+        <span style="flex:1;font-size:15px">git</span><span style="font-size:11px;color:var(--ink-4)">Clear</span>
+      </div>
+      <p class="lab" style="margin-top:16px">2 of 4</p>
+      <div style="margin-top:6px">
+        <div class="acct"><div class="iss"><span style="border-bottom:2px solid var(--accent)">Git</span>Hub</div><div class="eml">user@gmail.com</div><div class="code">418 902</div></div>
+        <div class="acct"><div class="iss"><span style="border-bottom:2px solid var(--accent)">Git</span>Lab</div><div class="eml">me@example.com</div><div class="code">205 774</div></div>
+      </div>
+      <div class="grow"></div>
+      <p class="tiny">Searches issuer, account, and email.</p>
+    </div>
+  </div>
+  <div class="num">07</div>
+  <p class="nme">Search</p>
+  <p class="spec">Realtime, debounced 120ms, filtered in memory. Matches are underlined in Accent rather than highlighted with a fill, which keeps the page calm. The active field is marked by an Ink underline, not a box. Empty result reads <b>No accounts match "git"</b> with a clear action, never a shrug.</p>
+  <span class="tag">debounce 120ms</span><span class="tag">in-memory</span>
+</div>
+
+<div class="item">
+  <div class="dev dark">
+    <div class="sbar"><span>9:41</span><span>100%</span></div>
+    <div class="body" style="justify-content:space-between">
+      <div style="display:flex;justify-content:space-between;align-items:center;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#7A786F">
+        <span style="color:#C9C7BE">Close</span><span>Scan</span><span style="color:#C9C7BE">Torch</span>
+      </div>
+      <div class="finder"><u></u><u></u><u></u><u></u><b></b></div>
+      <div>
+        <p class="hint" style="color:#9C9A91;text-align:center;margin:0 0 16px">Hold steady over the QR code.<br>HypAuth imports it the moment it reads.</p>
+        <div class="btn ghost">Enter key manually</div>
+      </div>
+    </div>
+  </div>
+  <div class="num">08</div>
+  <p class="nme">Scanner</p>
+  <p class="spec">The only dark screen, because a viewfinder needs it. Corner ticks only, no full frame box. Deduplicate against existing accounts <b>before</b> parsing so a re-scan does not create a second entry. Handle permission denied, camera unavailable, and malformed URI as distinct copy, each naming the fix.</p>
+  <span class="tag">mobile_scanner</span><span class="tag">parse &lt;100ms</span>
+</div>
+
+<div class="item">
+  <div class="dev">
+    <div class="sbar"><span>9:41</span><span>100%</span></div>
+    <div class="body" style="justify-content:center">
+      <p class="lab" style="color:var(--accent)">Added</p>
+      <p class="big" style="margin:10px 0 4px;font-size:24px">GitHub</p>
+      <p class="hint" style="margin:0">user@gmail.com</p>
+      <div style="margin-top:26px;border-top:1px solid var(--rule)">
+        <div class="kv"><b>Algorithm</b><span>SHA1</span></div>
+        <div class="kv"><b>Digits</b><span>6</span></div>
+        <div class="kv" style="border-bottom:0"><b>Period</b><span>30s</span></div>
+      </div>
+      <div class="grow"></div>
+      <div class="btn">Done</div>
+      <div class="btn quiet" style="margin-top:5px">Scan another</div>
+    </div>
+  </div>
+  <div class="num">09</div>
+  <p class="nme">Import success</p>
+  <p class="spec">Shows the parsed parameters so the user can confirm the QR was read correctly, which is the only chance to catch a bad import before the code fails at a login screen. By this point the secret is already in secure storage and the metadata row in Isar. <b>Scan another keeps the camera warm</b> for users onboarding several accounts.</p>
+  <span class="tag">verify parse</span>
+</div>
+
+<div class="item">
+  <div class="dev">
+    <div class="sbar"><span>9:41</span><span>100%</span></div>
+    <div class="body">
+      <div style="display:flex;justify-content:space-between;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-4)"><span style="color:var(--ink-2)">Back</span><span>Pin</span></div>
+      <div style="margin-top:26px">
+        <p class="lab">GitHub</p>
+        <p class="hint" style="margin:4px 0 0">user@gmail.com</p>
+        <div style="font-family:var(--mono);font-size:40px;letter-spacing:.04em;margin-top:20px;line-height:1">418 902</div>
+        <div class="track" style="margin-top:16px"><i style="width:73%"></i></div>
+        <div class="secs" style="margin-top:7px">Refreshes in 22s</div>
+      </div>
+      <div style="margin-top:26px;border-top:1px solid var(--rule)">
+        <div class="kv"><b>Algorithm</b><span>SHA1</span></div>
+        <div class="kv"><b>Digits, period</b><span>6, 30s</span></div>
+        <div class="kv" style="border-bottom:0"><b>Added</b><span>12.03.26</span></div>
+      </div>
+      <div class="grow"></div>
+      <div class="btn ghost" style="color:var(--danger);border-color:var(--danger-rule)">Remove account</div>
+    </div>
+  </div>
+  <div class="num">10</div>
+  <p class="nme">Account detail</p>
+  <p class="spec">Code set at 40px for reading aloud or typing on another device. <b>No reveal, no export, no QR regeneration.</b> Pin promotes the account to the top of Home; it is not a separate favourites tab. Removal lives here rather than only behind a swipe, so it is discoverable.</p>
+  <span class="tag">secret never read</span>
+</div>
+
+<div class="item">
+  <div class="dev">
+    <div class="sbar"><span>9:41</span><span>100%</span></div>
+    <div class="body">
+      <div style="margin-top:14px">
+        <div class="acct" style="opacity:.35"><div class="iss">GitHub</div><div class="eml">user@gmail.com</div><div class="code">418 902</div></div>
+        <div class="acct" style="opacity:.35"><div class="iss">AWS</div><div class="eml">admin@example.com</div><div class="code">730 156</div></div>
+      </div>
+      <div class="grow"></div>
+    </div>
+    <div class="overlay">
+      <div class="sheet">
+        <p class="ttl" style="font-size:19px">Remove GitHub?</p>
+        <p class="hint" style="margin:9px 0 0">The secret is erased from this device immediately. You will be locked out of this account unless you still have its recovery codes.</p>
+        <div style="margin-top:20px"><div class="btn red">Remove</div><div class="btn quiet" style="margin-top:5px">Keep it</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="num">11</div>
+  <p class="nme">Remove confirmation</p>
+  <p class="spec">Bottom sheet, not a centred dialog, so the action stays in thumb reach. The copy names the real consequence rather than saying "this cannot be undone". On confirm, delete the Isar row and the Keychain entry <b>in that order</b>, and treat a Keychain failure as a hard error rather than a silent one.</p>
+  <span class="tag">no undo</span><span class="tag">wipe both stores</span>
+</div>
+
+<div class="item">
+  <div class="dev">
+    <div class="sbar"><span>9:41</span><span>100%</span></div>
+    <div class="body">
+      <div style="display:flex;justify-content:space-between;align-items:baseline">
+        <p class="ttl">Reorder</p><span style="font-size:13px;font-weight:500;color:var(--accent)">Done</span>
+      </div>
+      <div style="margin-top:16px">
+        <div class="rowi" style="border-top:1px solid var(--ink);border-bottom-color:var(--ink);background:var(--wash)">
+          <span class="gl" style="color:var(--accent)"><b></b><i></i></span>
+          <div class="fill"><div class="iss">AWS</div><div class="eml">admin@example.com</div></div>
+        </div>
+        <div class="rowi"><span class="gl" style="color:#C9C7BE"><b></b><i></i></span><div class="fill"><div class="iss">GitHub</div><div class="eml">user@gmail.com</div></div></div>
+        <div class="rowi"><span class="gl" style="color:#C9C7BE"><b></b><i></i></span><div class="fill"><div class="iss">Slack</div><div class="eml">work@example.com</div></div></div>
+        <div class="rowi"><span class="gl" style="color:#C9C7BE"><b></b><i></i></span><div class="fill"><div class="iss">Proton</div><div class="eml">me@example.com</div></div></div>
+      </div>
+      <div class="grow"></div>
+      <p class="tiny">Codes are hidden while reordering. Order saves on drop.</p>
+    </div>
+  </div>
+  <div class="num">12</div>
+  <p class="nme">Reorder</p>
+  <p class="spec">Codes are deliberately suppressed here so rows keep a fixed height and drag targets do not shift under the finger. The lifted row is the only place Wash appears. Persist <b>sortOrder on drop</b>, not on Done, so a backgrounded app does not lose the arrangement. Medium haptic on pickup.</p>
+  <span class="tag">sortOrder</span><span class="tag">haptic medium</span>
+</div>
+
+<div class="item">
+  <div class="dev">
+    <div class="sbar"><span>9:41</span><span>100%</span></div>
+    <div class="body">
+      <p class="ttl">Settings</p>
+      <p class="lab" style="margin-top:22px">Security</p>
+      <div class="rowi"><div class="fill"><div>Face ID and passcode</div><div class="eml">Required on open</div></div><span class="sw"><i></i></span></div>
+      <div class="rowi"><div class="fill">Auto-lock</div><span class="eml">30s</span></div>
+      <div class="rowi"><div class="fill">Clear clipboard</div><span class="eml">45s</span></div>
+      <div class="rowi"><div class="fill"><div>Block screenshots</div><div class="eml">Android only</div></div><span class="sw"><i></i></span></div>
+      <p class="lab" style="margin-top:20px">Accounts</p>
+      <div class="rowi"><div class="fill">Reorder</div><span class="eml">4</span></div>
+      <div class="grow"></div>
+      <p class="tiny">HypAuth 1.0.0<br>No network permission requested.</p>
+    </div>
+  </div>
+  <div class="num">13</div>
+  <p class="nme">Settings</p>
+  <p class="spec">Sections are marked by a micro label and whitespace, not grey blocks, which keeps the page white. <b>Do not hardcode "Face ID"</b>: query getAvailableBiometrics and switch to Touch ID or a neutral "Unlock" as appropriate. Every toggle is backed by a repository, none by widget state. The version footer states the network position as a feature.</p>
+  <span class="tag">no widget state</span><span class="tag">query biometrics</span>
+</div>
+
+</div>
+</div>
+
+<div class="foot">
+  <span>HypAuth 1.0 screen designs</span>
+  <span>Light mode only. Dark mode and V2 surfaces to follow.</span>
+</div>
+
+</div>
+</body>
+</html>
