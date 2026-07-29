@@ -257,7 +257,7 @@ class _AccountDetailsScreenState extends ConsumerState<AccountDetailsScreen> {
       decoration: BoxDecoration(
         border: isLast
             ? null
-            : const Border(
+            : Border(
                 bottom: BorderSide(color: context.colors.rule, width: 1),
               ),
       ),
