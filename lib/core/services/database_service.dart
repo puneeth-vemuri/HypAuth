@@ -38,8 +38,9 @@ class DatabaseService {
     await _prefs.saveFallbackData('database_fallback_accounts', jsonEncode(list));
   }
 
-  Stream<List<Account>> watchAccounts() {
-    return _controller.stream;
+  Stream<List<Account>> watchAccounts() async* {
+    yield await getAccounts();
+    yield* _controller.stream;
   }
 
   Future<List<Account>> getAccounts() async {
