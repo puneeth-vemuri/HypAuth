@@ -99,7 +99,7 @@ class _AccountDetailsScreenState extends ConsumerState<AccountDetailsScreen> {
       backgroundColor: context.colors.paper,
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 21.0, vertical: 14.0),
+          padding: EdgeInsets.symmetric(horizontal: 21.0, vertical: 14.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -139,7 +139,7 @@ class _AccountDetailsScreenState extends ConsumerState<AccountDetailsScreen> {
                   ),
                 ],
               ),
-              const SizedBox(height: 26),
+              SizedBox(height: 26),
 
               // Issuer & Email
               Text(
@@ -151,7 +151,7 @@ class _AccountDetailsScreenState extends ConsumerState<AccountDetailsScreen> {
                   color: context.colors.ink4,
                 ),
               ),
-              const SizedBox(height: 4),
+              SizedBox(height: 4),
               Text(
                 widget.account.accountName,
                 style: TextStyle(
@@ -159,7 +159,7 @@ class _AccountDetailsScreenState extends ConsumerState<AccountDetailsScreen> {
                   color: context.colors.ink3,
                 ),
               ),
-              const SizedBox(height: 20),
+              SizedBox(height: 20),
 
               // Large 40px Mono Code
               Text(
@@ -173,7 +173,7 @@ class _AccountDetailsScreenState extends ConsumerState<AccountDetailsScreen> {
                   height: 1.0,
                 ),
               ),
-              const SizedBox(height: 16),
+              SizedBox(height: 16),
 
               // Track Bar
               Container(
@@ -196,7 +196,7 @@ class _AccountDetailsScreenState extends ConsumerState<AccountDetailsScreen> {
                   ),
                 ),
               ),
-              const SizedBox(height: 7),
+              SizedBox(height: 7),
 
               // Seconds Counter
               Text(
@@ -207,11 +207,11 @@ class _AccountDetailsScreenState extends ConsumerState<AccountDetailsScreen> {
                   color: isWarning ? context.colors.danger : context.colors.ink4,
                 ),
               ),
-              const SizedBox(height: 26),
+              SizedBox(height: 26),
 
               // Key Values List
               Container(
-                decoration: const BoxDecoration(
+                decoration: BoxDecoration(
                   border: Border(
                     top: BorderSide(color: context.colors.rule, width: 1),
                   ),
@@ -226,7 +226,7 @@ class _AccountDetailsScreenState extends ConsumerState<AccountDetailsScreen> {
                 ),
               ),
 
-              const Spacer(),
+              Spacer(),
 
               // Remove Account Outlined Red Button
               SizedBox(
@@ -239,7 +239,7 @@ class _AccountDetailsScreenState extends ConsumerState<AccountDetailsScreen> {
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(24),
                     ),
-                    padding: const EdgeInsets.symmetric(vertical: 14),
+                    padding: EdgeInsets.symmetric(vertical: 14),
                   ),
                   child: Text('Remove account'),
                 ),
@@ -253,7 +253,7 @@ class _AccountDetailsScreenState extends ConsumerState<AccountDetailsScreen> {
 
   Widget _buildKvRow(String key, String val, {bool isLast = false}) {
     return Container(
-      padding: const EdgeInsets.symmetric(vertical: 11),
+      padding: EdgeInsets.symmetric(vertical: 11),
       decoration: BoxDecoration(
         border: isLast
             ? null

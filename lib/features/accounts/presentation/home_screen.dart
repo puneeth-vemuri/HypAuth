@@ -18,7 +18,7 @@ class HomeScreen extends ConsumerWidget {
       backgroundColor: context.colors.paper,
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 21.0, vertical: 14.0),
+          padding: EdgeInsets.symmetric(horizontal: 21.0, vertical: 14.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -40,7 +40,7 @@ class HomeScreen extends ConsumerWidget {
                           color: context.colors.ink4,
                         ),
                       ),
-                      const SizedBox(height: 3),
+                      SizedBox(height: 3),
                       Text(
                         'Codes',
                         style: TextStyle(
@@ -66,7 +66,7 @@ class HomeScreen extends ConsumerWidget {
                           ),
                         ),
                       ),
-                      const SizedBox(width: 16),
+                      SizedBox(width: 16),
                       GestureDetector(
                         onTap: () => context.push('/settings'),
                         child: Text(
@@ -83,7 +83,7 @@ class HomeScreen extends ConsumerWidget {
                   ),
                 ],
               ),
-              const SizedBox(height: 14),
+              SizedBox(height: 14),
 
               // Account List / Empty State
               Expanded(
@@ -91,7 +91,7 @@ class HomeScreen extends ConsumerWidget {
                     ? Center(
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
-                          children: const [
+                          children: [
                             Text(
                               'No accounts added yet',
                               style: TextStyle(
@@ -139,7 +139,7 @@ class HomeScreen extends ConsumerWidget {
                   style: ElevatedButton.styleFrom(
                     backgroundColor: context.colors.ink,
                     foregroundColor: context.colors.paper,
-                    padding: const EdgeInsets.symmetric(vertical: 14),
+                    padding: EdgeInsets.symmetric(vertical: 14),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(24),
                     ),

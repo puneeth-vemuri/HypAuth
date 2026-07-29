@@ -43,7 +43,7 @@ class _ReorderScreenState extends ConsumerState<ReorderScreen> {
       backgroundColor: context.colors.paper,
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 21.0, vertical: 14.0),
+          padding: EdgeInsets.symmetric(horizontal: 21.0, vertical: 14.0),
           child: Column(
             children: [
               // Header
@@ -72,7 +72,7 @@ class _ReorderScreenState extends ConsumerState<ReorderScreen> {
                   ),
                 ],
               ),
-              const SizedBox(height: 16),
+              SizedBox(height: 16),
 
               // Reorderable List
               Expanded(
@@ -95,9 +95,9 @@ class _ReorderScreenState extends ConsumerState<ReorderScreen> {
                     final account = _accounts[index];
                     return Container(
                       key: ValueKey(account.id),
-                      padding: const EdgeInsets.symmetric(
+                      padding: EdgeInsets.symmetric(
                           vertical: 14, horizontal: 10),
-                      decoration: const BoxDecoration(
+                      decoration: BoxDecoration(
                         border: Border(
                           bottom: BorderSide(color: context.colors.rule, width: 1),
                         ),
@@ -110,7 +110,7 @@ class _ReorderScreenState extends ConsumerState<ReorderScreen> {
                             size: 20,
                             color: Color(0xFFC9C7BE),
                           ),
-                          const SizedBox(width: 14),
+                          SizedBox(width: 14),
                           Expanded(
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
@@ -123,7 +123,7 @@ class _ReorderScreenState extends ConsumerState<ReorderScreen> {
                                     color: context.colors.ink,
                                   ),
                                 ),
-                                const SizedBox(height: 1),
+                                SizedBox(height: 1),
                                 Text(
                                   account.accountName,
                                   style: TextStyle(
@@ -142,7 +142,7 @@ class _ReorderScreenState extends ConsumerState<ReorderScreen> {
               ),
 
               // Footer
-              const Padding(
+              Padding(
                 padding: EdgeInsets.only(top: 12.0),
                 child: Text(
                   'Codes are hidden while reordering. Order saves on drop.',

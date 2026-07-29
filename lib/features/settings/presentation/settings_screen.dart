@@ -39,7 +39,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
       backgroundColor: context.colors.paper,
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 21.0, vertical: 14.0),
+          padding: EdgeInsets.symmetric(horizontal: 21.0, vertical: 14.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -69,7 +69,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
                   ),
                 ],
               ),
-              const SizedBox(height: 22),
+              SizedBox(height: 22),
 
               // SECURITY Section
               Text(
@@ -81,7 +81,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
                   color: context.colors.ink4,
                 ),
               ),
-              const SizedBox(height: 4),
+              SizedBox(height: 4),
 
               // Rows
               _buildSwitchRow(
@@ -119,7 +119,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
                 onChanged: (_) {},
               ),
 
-              const SizedBox(height: 20),
+              SizedBox(height: 20),
 
               // ACCOUNTS Section
               Text(
@@ -131,7 +131,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
                   color: context.colors.ink4,
                 ),
               ),
-              const SizedBox(height: 4),
+              SizedBox(height: 4),
 
               _buildOptionRow(
                 title: 'Reorder accounts',
@@ -139,7 +139,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
                 onTap: () => context.push('/reorder'),
               ),
 
-              const Spacer(),
+              Spacer(),
 
               // Footer
               Text(
@@ -164,8 +164,8 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
     required ValueChanged<bool> onChanged,
   }) {
     return Container(
-      padding: const EdgeInsets.symmetric(vertical: 14),
-      decoration: const BoxDecoration(
+      padding: EdgeInsets.symmetric(vertical: 14),
+      decoration: BoxDecoration(
         border: Border(
           bottom: BorderSide(color: context.colors.rule, width: 1),
         ),
@@ -184,7 +184,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
                   color: context.colors.ink,
                 ),
               ),
-              const SizedBox(height: 1),
+              SizedBox(height: 1),
               Text(
                 subtitle,
                 style: TextStyle(
@@ -214,8 +214,8 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
     return InkWell(
       onTap: onTap,
       child: Container(
-        padding: const EdgeInsets.symmetric(vertical: 14),
-        decoration: const BoxDecoration(
+        padding: EdgeInsets.symmetric(vertical: 14),
+        decoration: BoxDecoration(
           border: Border(
             bottom: BorderSide(color: context.colors.rule, width: 1),
           ),

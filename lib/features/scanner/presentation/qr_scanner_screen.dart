@@ -75,17 +75,17 @@ class _QrScannerScreenState extends ConsumerState<QrScannerScreen> {
             children: [
               TextField(
                 controller: issuerController,
-                decoration: const InputDecoration(labelText: 'Issuer (e.g. GitHub)'),
+                decoration: InputDecoration(labelText: 'Issuer (e.g. GitHub)'),
               ),
-              const SizedBox(height: 12),
+              SizedBox(height: 12),
               TextField(
                 controller: accountController,
-                decoration: const InputDecoration(labelText: 'Account / Email'),
+                decoration: InputDecoration(labelText: 'Account / Email'),
               ),
-              const SizedBox(height: 12),
+              SizedBox(height: 12),
               TextField(
                 controller: secretController,
-                decoration: const InputDecoration(labelText: 'Secret Key (Base32)'),
+                decoration: InputDecoration(labelText: 'Secret Key (Base32)'),
               ),
             ],
           ),
@@ -157,7 +157,7 @@ class _QrScannerScreenState extends ConsumerState<QrScannerScreen> {
               onDetect: _onDetect,
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 21.0, vertical: 14.0),
+              padding: EdgeInsets.symmetric(horizontal: 21.0, vertical: 14.0),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -212,7 +212,7 @@ class _QrScannerScreenState extends ConsumerState<QrScannerScreen> {
                             child: Container(
                               width: 26,
                               height: 26,
-                              decoration: const BoxDecoration(
+                              decoration: BoxDecoration(
                                 border: Border(
                                   left: BorderSide(color: context.colors.paper, width: 1.5),
                                   top: BorderSide(color: context.colors.paper, width: 1.5),
@@ -227,7 +227,7 @@ class _QrScannerScreenState extends ConsumerState<QrScannerScreen> {
                             child: Container(
                               width: 26,
                               height: 26,
-                              decoration: const BoxDecoration(
+                              decoration: BoxDecoration(
                                 border: Border(
                                   right: BorderSide(color: context.colors.paper, width: 1.5),
                                   top: BorderSide(color: context.colors.paper, width: 1.5),
@@ -242,7 +242,7 @@ class _QrScannerScreenState extends ConsumerState<QrScannerScreen> {
                             child: Container(
                               width: 26,
                               height: 26,
-                              decoration: const BoxDecoration(
+                              decoration: BoxDecoration(
                                 border: Border(
                                   left: BorderSide(color: context.colors.paper, width: 1.5),
                                   bottom: BorderSide(color: context.colors.paper, width: 1.5),
@@ -257,7 +257,7 @@ class _QrScannerScreenState extends ConsumerState<QrScannerScreen> {
                             child: Container(
                               width: 26,
                               height: 26,
-                              decoration: const BoxDecoration(
+                              decoration: BoxDecoration(
                                 border: Border(
                                   right: BorderSide(color: context.colors.paper, width: 1.5),
                                   bottom: BorderSide(color: context.colors.paper, width: 1.5),
@@ -268,7 +268,7 @@ class _QrScannerScreenState extends ConsumerState<QrScannerScreen> {
                           // Accent Scan Line
                           Center(
                             child: Container(
-                              margin: const EdgeInsets.symmetric(horizontal: 14),
+                              margin: EdgeInsets.symmetric(horizontal: 14),
                               height: 1,
                               color: context.colors.accent,
                             ),
@@ -290,7 +290,7 @@ class _QrScannerScreenState extends ConsumerState<QrScannerScreen> {
                           height: 1.6,
                         ),
                       ),
-                      const SizedBox(height: 16),
+                      SizedBox(height: 16),
                       SizedBox(
                         width: double.infinity,
                         child: OutlinedButton(
@@ -301,7 +301,7 @@ class _QrScannerScreenState extends ConsumerState<QrScannerScreen> {
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(24),
                             ),
-                            padding: const EdgeInsets.symmetric(vertical: 14),
+                            padding: EdgeInsets.symmetric(vertical: 14),
                           ),
                           child: Text('Enter key manually'),
                         ),

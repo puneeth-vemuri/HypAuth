@@ -88,13 +88,13 @@ class _BiometricUnlockScreenState extends ConsumerState<BiometricUnlockScreen>
       backgroundColor: context.colors.paper,
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 20.0),
+          padding: EdgeInsets.symmetric(horizontal: 24.0, vertical: 20.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Spacer(),
+              Spacer(),
               HypAuthLogoMark(size: 36, color: context.colors.ink),
-              const SizedBox(height: 24),
+              SizedBox(height: 24),
               if (_failed) ...[
                 Text(
                   '$_biometricName NOT RECOGNISED'.toUpperCase(),
@@ -105,7 +105,7 @@ class _BiometricUnlockScreenState extends ConsumerState<BiometricUnlockScreen>
                     color: context.colors.danger,
                   ),
                 ),
-                const SizedBox(height: 8),
+                SizedBox(height: 8),
               ],
               Text(
                 'Try again, or\nuse your passcode',
@@ -117,7 +117,7 @@ class _BiometricUnlockScreenState extends ConsumerState<BiometricUnlockScreen>
                   color: context.colors.ink,
                 ),
               ),
-              const SizedBox(height: 12),
+              SizedBox(height: 12),
               Text(
                 'Your codes never leave this device, so there is no way to recover them remotely.',
                 style: TextStyle(
@@ -126,7 +126,7 @@ class _BiometricUnlockScreenState extends ConsumerState<BiometricUnlockScreen>
                   height: 1.6,
                 ),
               ),
-              const SizedBox(height: 32),
+              SizedBox(height: 32),
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
@@ -134,7 +134,7 @@ class _BiometricUnlockScreenState extends ConsumerState<BiometricUnlockScreen>
                   style: ElevatedButton.styleFrom(
                     backgroundColor: context.colors.ink,
                     foregroundColor: context.colors.paper,
-                    padding: const EdgeInsets.symmetric(vertical: 14),
+                    padding: EdgeInsets.symmetric(vertical: 14),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(24),
                     ),
@@ -142,7 +142,7 @@ class _BiometricUnlockScreenState extends ConsumerState<BiometricUnlockScreen>
                   child: Text('Try $_biometricName again'),
                 ),
               ),
-              const SizedBox(height: 8),
+              SizedBox(height: 8),
               SizedBox(
                 width: double.infinity,
                 child: TextButton(

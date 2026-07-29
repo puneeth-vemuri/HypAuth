@@ -121,7 +121,7 @@ class _AccountRowState extends ConsumerState<AccountRow> {
         child: Material(
           color: Colors.transparent,
           child: Container(
-            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+            padding: EdgeInsets.symmetric(horizontal: 16, vertical: 12),
             decoration: BoxDecoration(
               color: context.colors.ink,
               borderRadius: BorderRadius.circular(12),
@@ -179,8 +179,8 @@ class _AccountRowState extends ConsumerState<AccountRow> {
       onTap: _copyToClipboard,
       onLongPress: widget.onTap,
       child: Container(
-        padding: const EdgeInsets.symmetric(vertical: 15),
-        decoration: const BoxDecoration(
+        padding: EdgeInsets.symmetric(vertical: 15),
+        decoration: BoxDecoration(
           border: Border(
             bottom: BorderSide(color: context.colors.rule, width: 1),
           ),
@@ -198,7 +198,7 @@ class _AccountRowState extends ConsumerState<AccountRow> {
                 color: context.colors.ink,
               ),
             ),
-            const SizedBox(height: 1),
+            SizedBox(height: 1),
 
             // Email / Account
             _buildHighlightedText(
@@ -209,7 +209,7 @@ class _AccountRowState extends ConsumerState<AccountRow> {
                 color: context.colors.ink3,
               ),
             ),
-            const SizedBox(height: 7),
+            SizedBox(height: 7),
 
             // Code
             Text(
@@ -223,7 +223,7 @@ class _AccountRowState extends ConsumerState<AccountRow> {
                 height: 1.0,
               ),
             ),
-            const SizedBox(height: 10),
+            SizedBox(height: 10),
 
             // Track Bar
             Container(
@@ -246,7 +246,7 @@ class _AccountRowState extends ConsumerState<AccountRow> {
                 ),
               ),
             ),
-            const SizedBox(height: 5),
+            SizedBox(height: 5),
 
             // Seconds Counter
             Text(

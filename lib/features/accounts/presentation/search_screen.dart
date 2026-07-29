@@ -43,14 +43,14 @@ class _SearchScreenState extends ConsumerState<SearchScreen> {
       backgroundColor: context.colors.paper,
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 21.0, vertical: 14.0),
+          padding: EdgeInsets.symmetric(horizontal: 21.0, vertical: 14.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               // Search Bar Header
               Container(
-                padding: const EdgeInsets.only(bottom: 14),
-                decoration: const BoxDecoration(
+                padding: EdgeInsets.only(bottom: 14),
+                decoration: BoxDecoration(
                   border: Border(
                     bottom: BorderSide(color: context.colors.ink, width: 1),
                   ),
@@ -65,7 +65,7 @@ class _SearchScreenState extends ConsumerState<SearchScreen> {
                           fontSize: 15,
                           color: context.colors.ink,
                         ),
-                        decoration: const InputDecoration(
+                        decoration: InputDecoration(
                           hintText: 'Search accounts...',
                           hintStyle: TextStyle(color: context.colors.ink4),
                           border: InputBorder.none,
@@ -95,7 +95,7 @@ class _SearchScreenState extends ConsumerState<SearchScreen> {
                   ],
                 ),
               ),
-              const SizedBox(height: 16),
+              SizedBox(height: 16),
 
               // Micro Label
               Text(
@@ -107,7 +107,7 @@ class _SearchScreenState extends ConsumerState<SearchScreen> {
                   color: context.colors.ink4,
                 ),
               ),
-              const SizedBox(height: 6),
+              SizedBox(height: 6),
 
               // Results List / Empty State
               Expanded(
@@ -145,7 +145,7 @@ class _SearchScreenState extends ConsumerState<SearchScreen> {
               ),
 
               // Footer
-              const Padding(
+              Padding(
                 padding: EdgeInsets.only(top: 12.0),
                 child: Text(
                   'Searches issuer, account, and email.',

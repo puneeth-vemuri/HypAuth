@@ -29,11 +29,11 @@ class RemoveConfirmationSheet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
         color: context.colors.paper,
         borderRadius: BorderRadius.vertical(top: Radius.circular(18)),
       ),
-      padding: const EdgeInsets.all(22),
+      padding: EdgeInsets.all(22),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -47,7 +47,7 @@ class RemoveConfirmationSheet extends StatelessWidget {
               letterSpacing: -0.15,
             ),
           ),
-          const SizedBox(height: 9),
+          SizedBox(height: 9),
           Text(
             'The secret is erased from this device immediately. You will be locked out of this account unless you still have its recovery codes.',
             style: TextStyle(
@@ -56,7 +56,7 @@ class RemoveConfirmationSheet extends StatelessWidget {
               height: 1.6,
             ),
           ),
-          const SizedBox(height: 20),
+          SizedBox(height: 20),
           SizedBox(
             width: double.infinity,
             child: ElevatedButton(
@@ -67,7 +67,7 @@ class RemoveConfirmationSheet extends StatelessWidget {
               style: ElevatedButton.styleFrom(
                 backgroundColor: context.colors.danger,
                 foregroundColor: context.colors.paper,
-                padding: const EdgeInsets.symmetric(vertical: 14),
+                padding: EdgeInsets.symmetric(vertical: 14),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(24),
                 ),
@@ -75,7 +75,7 @@ class RemoveConfirmationSheet extends StatelessWidget {
               child: Text('Remove'),
             ),
           ),
-          const SizedBox(height: 5),
+          SizedBox(height: 5),
           SizedBox(
             width: double.infinity,
             child: TextButton(

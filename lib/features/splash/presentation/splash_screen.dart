@@ -31,7 +31,7 @@ class _SplashScreenState extends State<SplashScreen> {
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: const [
+          children: [
             HypAuthLogoMark(size: 36),
             SizedBox(height: 22),
             Text(

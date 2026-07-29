@@ -19,11 +19,11 @@ class ImportSuccessScreen extends StatelessWidget {
       backgroundColor: context.colors.paper,
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 20.0),
+          padding: EdgeInsets.symmetric(horizontal: 24.0, vertical: 20.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Spacer(),
+              Spacer(),
               Text(
                 'ADDED',
                 style: TextStyle(
@@ -33,7 +33,7 @@ class ImportSuccessScreen extends StatelessWidget {
                   color: context.colors.accent,
                 ),
               ),
-              const SizedBox(height: 10),
+              SizedBox(height: 10),
               Text(
                 account.issuer,
                 style: TextStyle(
@@ -43,7 +43,7 @@ class ImportSuccessScreen extends StatelessWidget {
                   letterSpacing: -0.15,
                 ),
               ),
-              const SizedBox(height: 4),
+              SizedBox(height: 4),
               Text(
                 account.accountName,
                 style: TextStyle(
@@ -51,22 +51,22 @@ class ImportSuccessScreen extends StatelessWidget {
                   color: context.colors.ink3,
                 ),
               ),
-              const SizedBox(height: 26),
+              SizedBox(height: 26),
               Container(
-                decoration: const BoxDecoration(
+                decoration: BoxDecoration(
                   border: Border(
                     top: BorderSide(color: context.colors.rule, width: 1),
                   ),
                 ),
                 child: Column(
                   children: [
-                    _buildKvRow('Algorithm', account.algorithm),
-                    _buildKvRow('Digits', '${account.digits}'),
-                    _buildKvRow('Period', '${account.period}s', isLast: true),
+                    _buildKvRow(context, 'Algorithm', account.algorithm),
+                    _buildKvRow(context, 'Digits', '${account.digits}'),
+                    _buildKvRow(context, 'Period', '${account.period}s', isLast: true),
                   ],
                 ),
               ),
-              const Spacer(),
+              Spacer(),
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
@@ -74,7 +74,7 @@ class ImportSuccessScreen extends StatelessWidget {
                   style: ElevatedButton.styleFrom(
                     backgroundColor: context.colors.ink,
                     foregroundColor: context.colors.paper,
-                    padding: const EdgeInsets.symmetric(vertical: 14),
+                    padding: EdgeInsets.symmetric(vertical: 14),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(24),
                     ),
@@ -82,7 +82,7 @@ class ImportSuccessScreen extends StatelessWidget {
                   child: Text('Done'),
                 ),
               ),
-              const SizedBox(height: 5),
+              SizedBox(height: 5),
               SizedBox(
                 width: double.infinity,
                 child: TextButton(
@@ -104,13 +104,13 @@ class ImportSuccessScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildKvRow(String key, String val, {bool isLast = false}) {
+  Widget _buildKvRow(BuildContext context, String key, String val, {bool isLast = false}) {
     return Container(
-      padding: const EdgeInsets.symmetric(vertical: 11),
+      padding: EdgeInsets.symmetric(vertical: 11),
       decoration: BoxDecoration(
         border: isLast
             ? null
-            : const Border(
+            : Border(
                 bottom: BorderSide(color: context.colors.rule, width: 1),
               ),
       ),
